@@ -187,6 +187,7 @@ Some of the colors used in this project are: [....................this to be cha
 
 The fonts used for the site were taken from [Google Fonts](https://fonts.google.com/). To make sure the questions are represented on a fun way but easy to read, it was decided to use simple but and consistent fonts previously used in other projects within Code Institute like:
 
+- "Love Ya Like A Sister": used for the name of the website
 - "Montserrat alternates": to create fun and attractive fonts as well as drawing attention to the most important information.
 - "Quicksand": for more suttle but attractive font. It's clean and simple, making this a pleasant font to look at.
 - Sans-serif: used as a fallback font in cases there is an issue when importing fonts or the browser does not support these.
