@@ -65,24 +65,22 @@ The website will be responsive and accessible on all devices, but it's optimized
 
 ### **User stories**
 
-- As a user I want to:
+ #### As an anonymous user I want to:
+  - see all the recipes on the main page
+  - to be able to find information effortessly
+  - not to be able to add any recipes without registered
+  - Not to be able to edit/add/remove any recipes others have created
 
-    - know that my information is safe and secure on a database
-    - be able to manage my own posts by editing and/or deleting them
-    - be able to create my own recipes and post them for everyone to see them
-    - be able to access the website from multiple devices of different sizes
-    - to be able to find information effortessly
+ #### As a registered user I want to:
+  - be able to manage my own posts by editing and/or deleting them
+  - be able to create my own recipes and post them for everyone to see them
+  - not to be allowed to remove any other posts except mine
+  - not to lose any recipes because others have removed it
 
-
-### **Website owner goals**
-
-As the site owner, I want:
-
-  - to allow the user to register and create their own account to access their own recipes
-  - to lay all information clearly for users to easily navigate throught the website
-  - to make sure the website is responsive across major screen sizes
-  - to make sure users information is securely stored on a database
-
+ #### As the admin I want to:
+  - be able to delete any users recipes 
+  - be able to edit any users recipes
+  - have unique access to all features 
 
 ---
 
@@ -124,8 +122,8 @@ This will all be achieved through creating a clear and strong UI focusing on wel
   - Minimal but appealing homepage 
   - Navigation links clearly visible on the top of the website.
   - Responsive navigation bar
-  - Allow users to create and manage their own account.
-  - Allow users to create recipes with full CRUD functionality.
+  - Only allow registered users to create and manage their own account.
+  - Only allow registered users to create recipes with full CRUD functionality.
   - A form with steps to allow users create their recipes fast and easily
 
 - **Lower priority features that may not be included in the initial release of the website:**
@@ -145,38 +143,25 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 
   - Header/Navigation - Top Level
 
-    - The navigation menu will be a hamburger/bars menu icon on smaller screen sizes. It will be fixed/sticky in the top right corner allowing the user to navigate with a single hand .
-
-   - Withing the header, in the middle, there will be a search bar so the user will have a fast access to it.
-
-   - The header will have a hero section to create a pleasant look so the users enjoy the experience of using the site. It will be divided in two colums: One column which includes a hero image with information about the website and the other column will contain the registration form, a log in link for members, and a call to action as a sign up button.
+    - The navigation menu will be a hamburger/bars menu icon on smaller screen sizes. It will be fixed/sticky in the top right corner allowing the user to navigate with a single hand. The navigation bar will have extra links with access to the CRUD functionality for members only.
+    - Withing the header, in the middle, there will be a search bar so the user will have a fast access to it.
+    - The header will have a hero section to create a pleasant look so the users enjoy the experience of using the site. It will be divided in two colums: One column which includes a hero image with information about the website and the other column will contain the registration form, a log in link for members, and a call to action as a sign up button.
 
   - Body - Main Page Elements: 
 
-   - (the extended navigation bar with access to the CRUD functionality for members only)
-
-   - It will contain all the recipes in cards. The user will be able to click on a call to action button to extend the recipe and show it on the middle of the page.
-
-   - The pages specific to using forms will have minimal extra content to make the forms the only imporatnt part of the section
+    - It will contain all the recipes in cards. The user will be able to click on a call to action button to extend the recipe and show it on the middle of the page.
+    - The pages specific to using forms will have minimal extra content to make the forms the only imporatnt part of the section
   
   - Footer - Bottom Level
    
-   -   Social media links placed here to ensure the user does not navigate away from the page to soon.
-
-   - Copyright information
-
- 
-- 
+    - Social media links placed here to ensure the user does not navigate away from the page to soon.
+    - Creators information
 
 ---
 
 ### Skeleton Plane
 
-As this project is the first one for me usign Python and Databases, 
-When I started this project, I had the idea of hard coding the questions and separating them in three different themes. As I deployed my project very early on and asked family to check the first look/idea of the game, they recomended to add more variaty of questions as they thought it would get boring for users to play the same 10 questions over and over again.
-As I looked into other options to introduce more questions, I found an API with a large trivia database free to use, so I decided to change the first design and make changes to it. Below are the first wireframes and the new ones:
-
-- Wireframes:
+#### Wireframes:
   - [Mobile Wireframe](docs/wireframes/Mobile.png)
   - [Ipad Wireframe](docs/wireframes/Ipad.png)
   - [Desktop Wireframe](docs/wireframes/Desktop.png)
@@ -184,19 +169,18 @@ As I looked into other options to introduce more questions, I found an API with 
 
 ## DESIGN
 
-The design of the website was created to be as simple but pretty as posible, not to distract the customer with too many color schemes and trying to bring the focus to the picture of the recipes.
+The design of the website was created to be as simple but pretty as posible, not to distract the user with too many color schemes and trying to bring the focus to the picture of the recipes.
 
 ### **Colors**
 
 The colors used in this project are very simple, to keep a minimalistic and tidy website, as well as keeping the color contrasts the highests posible to facilitate the screen readers and make this site accessible to all.
 
-The colors chosen are combinations of: bright orange and darks typography, white and shades of grey. The color were found using [Coolors](https://coolors.co/).
+The colors chosen are combinations of: bright orange with dark typography, white and shades of grey. The color were found using [Coolors](https://coolors.co/).
 
 Some of the colors used in this project are: [....................this to be changed.................]
 - rgb(87, 15, 55): this color was used as the main color, but I've added opacity to make different shades of it.
 - rgba(173, 169, 183, 0.7): used as a background color.
 - #fff: used as button background color.
-
 
 ---
 
@@ -212,8 +196,10 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### **Imagery**
 
+- As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL if they want to show an image as a thumbnail of the recipe. 
 
-- .
+- The hero image will be the only image that it will be included in this project.
+
 ---
 
 ### **Logo**
@@ -230,52 +216,34 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - The main schema used in this project is ObjectId.
 
-
+- ((add database images here))
 ---
 
 ## FEATURES
 
 ### Existing Features
 
-- The site will consist of four pages: homepage, the game page, the end page and the highscores page. Based on the user selection, the user will be taken to the respective page. The site will be responsive for most screen sizes, but it's best enjoyed on medium to large size screens.
-
 - All buttons and links will be styled with hovering effects to invite the user to click on them.
-
-- The logo will stay static along the game to give the website consistency.
+- The logo, seach bar and will stay static along the website to give the website consistency.
 
 - **Homepage:** 
 
-  - Header: An area to introduce the user to the game
-  - Image: to set the theme of the quiz visually
-  - Controls Section: under the hero image there will be a section highlighted on another darker color with lighter buttons to point the user to the contol section:
-    - Start the game Button: 'Start' button to hint the user to click on it to Start the quiz. Clicking this will direct the user to the game.
-    - High Score Button: a button directing the user to the top 5 scores page which are saved on the end page. Clickin this button will direct the user to high scores page.
-    - A modal button which contains the instructions of the game. clicking this button will open a modal explaining the user the game rules.
+ 
 
 - **Sign In:**
 
- - A section above the displayed question with two areas: the area on the left counts the current question with a progress bar to make the counter more appealing and easier to visually see it. The area on the right display the added score when the user answers the question correctly. - 
 
 - **Log In:** 
 
-  - A section above the displayed question with two areas: the area on the left counts the current question with a progress bar to make the counter more appealing and easier to visually see it. The area on the right display the added score when the user answers the question correctly. 
-  - There will be 10 questions on display. The questions have been created thanks to the use of an [open Trivia API](https://opentdb.com/). 
-  - If the API fails to load, the user will be presented with an error message prompting them to reload the page and try again.
-  - The user will be given 4 multiple choice answers. The user has to click on the answer. The answer will turn red or green depending if the answer is correct or incorrect. The user won't be able to see right answer if the choice is incorrect, as the intention is to be able to retake the quiz and try to beat their own score,
-  - The question will automatically load a second after the user has made the selection, so there will not be any buttons for the user to jump into the next question manually. This is to make the user's experience nicer, by clicking less.
-    
-- **End:** This will be the feedback page.
-  - There will be a section with the score summary, which will be updated as the user answers correct questions. As each question is 10 points the maximum amount of points the user can get is 100 points.
-  
+  -
+
 
 ---
 
 ### Features left to implement
 
 - The option for the user to upload their own images: as it was adviced by student care, this functionality was left out, but would be implemented further down the course, as it will be taught in future lessons.
-
-- 
-
-- 
+- Give the option to download all created recipes to create a personalized cookBook and be able to make profit from this
+-  
 
 ---
