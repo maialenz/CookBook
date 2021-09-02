@@ -2,7 +2,7 @@
 
 ## Milestone 3 Project - Backend Development Milestone Project
 
-### [View live project here]()
+### [View live project here](https://git.heroku.com/ms3-cookbook-project.git)
 
 ![Image of the mockup of the live website](docs/testing/Mockup.png)
 

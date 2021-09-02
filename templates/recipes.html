@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mai's CookBook</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Im extending a base template</h2>
+
     {% for recipe in recipes %}
         {{ recipe.recipe_name }}<br>
         {{ recipe.course_type}}<br>
@@ -14,5 +10,5 @@
         {{ recipe.serves }}<br>
         {{ recipe.vegetarian }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
