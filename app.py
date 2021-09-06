@@ -27,7 +27,45 @@ def get_recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Allow user to register and create an account. Checks if user already
+    exists. If it doesn't, it redirects the user to their profile page
+    """
+
+    if request.method == "POST":
+
+        # variables
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmed_password = request.form.get("confirm_password")
+        # check if username already exist in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+        elif len(username) < 5:
+            flash("Username must contain at least 5 characters")
+            return redirect(url_for("register"))
+        elif len(password) < 5:
+            flash("Password must contain more than 5 characters")
+        elif password != confirmed_password:
+            flash("The passwords do not match. Please try again")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(password)
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower(),
+        flash("You have been Registered Successfully!", category="success")
+
     return render_template("register.html")
+    # return render_template(url_for("profile", username=session["username"]))
 
 
 if __name__ == "__main__":

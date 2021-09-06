@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<!--Register form -->
 {% block content %}
 
 <h3 class="center-align">Register</h3>
@@ -11,7 +12,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user-plus prefix red-text text-lighten-1"></i>
-                    <input id="username" name="username" type="text" class="validate">
+                    <input id="username" name="username" type="text" minlength="5" 
+                    maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -19,13 +21,24 @@
             <!--password field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix red-text text-lighten-1"></i>
-                    <input id="password" name="password" type="password" class="validate">
+                    <i class="fas fa-lock prefix red-text text-lighten-1"></i>
+                    <input id="password" name="password" type="password" minlength="5" 
+                    maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
 
-            <!--register button-->
+            <!--confirm password field-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-lock prefix red-text text-lighten-1"></i>
+                    <input id="confirm_password" name="confirm_password" type="password" 
+                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+            </div>
+
+            <!--Submit button to register and create new user on Database-->
             <div class="row">
                 <button type="submit" class="col s12 btn-large red lighten-1 text-shadow">
                     Register <i class="fas fa-sign-in-alt"></i>
