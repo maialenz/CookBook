@@ -31,7 +31,6 @@ def register():
     Allow user to register and create an account. Checks if user already
     exists. If it doesn't, it redirects the user to their profile page
     """
-
     if request.method == "POST":
 
         # variables
@@ -62,10 +61,44 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower(),
-        flash("You have been Registered Successfully!", category="success")
+        flash("You have been Registered Successfully!")
 
     return render_template("register.html")
     # return render_template(url_for("profile", username=session["username"]))
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """
+    Allows user to log into their account. The function checks if the
+    username exists. If it does, it checks the db password
+    with the password the user has entered. If successful the
+    user is then redirected to their profile. If the user input
+    does not match the db, the user recieves a flash notification.
+    """
+    if request.method == "POST":
+        # check if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                 existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome again, {}!".format(request.form.get("username")))
+              
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # if username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
