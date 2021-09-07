@@ -120,7 +120,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remore user from session cookie
-    flash("Bye! See you later!")
+    flash("See you soon!")
     session.pop("user")
     return redirect(url_for("login"))
 
