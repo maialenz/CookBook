@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A website to store your favourite recipes and get ideas for your next culinary creations!" />
+    <meta name="keywords"
+        content="food, recipe, cook, kitchen, homemade, cookbook, courses, vegetarian, table, ingredients, seasoning, spicy" />
+    <meta name="author" content="Maialen Zumeta" />
+
+    <title>The Homemade Kitchen</title>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+        integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
     {% block styles %}
@@ -25,27 +37,27 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}">
     <link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
 
-    <title>The Homemade Kitchen</title>
 
 </head>
 
 <body>
     <header>
         <!-- top navbar-->
-        <nav class="nav-extended text-shadow red lighten-1" id="navbar">
+        <nav class="nav-extended text-shadow light-green lighten-2" id="navbar">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo ">The Homemade Kitchen</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    <!--Displays navbar links only for registered users-->
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="#">Add Recipe</a></li>
-                        <li><a href="#">Manage Recipes</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="#">Add Recipe</a></li>
+                    <li><a href="#">Manage Recipes</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -57,32 +69,33 @@
                 <h4 class="center-align red-text text-lighten-1">The Homemade Kitchen</h4>
             </li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+            <!--Displays navbar links only for registered users-->
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">Manage Recipes</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="#">Manage Recipes</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
-  
+
     </header>
 
-  
     <section>
+
         <!-- show flash messages here-->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                
-                <div class="row flashes">
-                    <h4 class="red-text text-lighten-2 center-align">{{ message }}</h4>
-                </div>
-                
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+
+        <div class="row flashes">
+            <h4 class="red-text text-lighten-2 center-align">{{ message }}</h4>
+        </div>
+
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
@@ -98,6 +111,9 @@
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <!--Materialize JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Custom JS-->

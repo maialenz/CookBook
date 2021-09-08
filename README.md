@@ -244,6 +244,6 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - The option for the user to upload their own images: as it was adviced by student care, this functionality was left out, but would be implemented further down the course, as it will be taught in future lessons.
 - Give the option to download all created recipes to create a personalized cookBook and be able to make profit from this
--  
+-  Active page class to let the user know which page they are currently on: Although this was an easy input before using flask, I have found this a challenging step to add to this project. As I have been short with times, I have decided to leave this feature for later realeases when I have some extra time to expand the MVP.
 
 ---
