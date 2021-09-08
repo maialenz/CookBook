@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="green-text text darken-2 center-align">Add your new Recipe</h3>
+
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        <!--Course Type-->
+        <div class="row">
+        <div class="input-field col s12">
+            <i class="fas fa-folder-plus prefix green-text text-darken-3"></i>
+            <select id="course_type" name="course_type" class="validate" required>
+                <option value="" disabled selected>Choose the course type</option>
+                {% for course in courses %}
+                    <option value="{{ course.course_type }}">{{ course.course_type }}</option>
+                {% endfor %}
+            </select>
+            <label for="course_type">Type of Recipe</label>
+            </div>
+        </div>
+        <!-- Recipe Information-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-utensils prefix green-text text-darken-3"></i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Recipe Name</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">Recipe url</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">How would you describle your recipe?</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
