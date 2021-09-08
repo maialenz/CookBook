@@ -1,37 +1,168 @@
-{% extends "base.html" %}
-{% block content %}
+<!--Materialize modal for the user to add a new recipe. Linked to recipes.html-->
+{% block modal %}
 
-<h3 class="green-text text darken-2 center-align">Add your new Recipe</h3>
+ <!-- Modal Structure -->
+ <div id="add_recipe_modal" class="modal">
+    <div class="modal-content modal-fixed-footer"> 
+        <h3 class="green-text text darken-2 center-align">Add your new Recipe</h3>
+        <div class="row">
+            <form class="col s12" method="POST" action="">
+        
+                <!--Course Type Selector-->
+        
+                <!--Vegeratian Switch -->
+                <div class="row">
+                    <div class="input-field col s12 l6">
+                        <div class="switch">
+                            <i class="fas fa-carrot prefix green-text text-darken-3"></i>
+                            <label for="vegetarian">
+                                <input type="checkbox" id="vegetarian" name="vegetarian">
+                                <span class="lever"></span>
+                                Is this a Vegetarian Recipe?
+                            </label>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Recipe Information-->
+        
+                <!--Recipe name-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-utensils prefix green-text text-darken-3"></i>
+                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50" type="text" class="validate"
+                            required>
+                        <label for="recipe_name">Recipe Name</label>
+                    </div>
+                </div>
+        
+                <!--Recipe url-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-camera prefix green-text text-darken-3"></i>
+                        <input id="image_url" name="image_url" type="tel" class="validate" required>
+                        <label for="image_url">Copy image's URL here</label>
+                    </div>
+                </div>
+        
+                <!--Recipe Description-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix green-text text-darken-3"></i>
+                        <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="200"
+                            class="materialize-textarea validate" required></textarea>
+                        <label for="recipe_description">Describe your recipe on a few words</label>
+                    </div>
+                </div>
+        
+                <!--Recipe dificulty-->
+                <div class="row">
 
-<div class="row">
-    <form class="col s12" method="POST" action="">
-        <!--Course Type-->
-        <div class="row">
-        <div class="input-field col s12">
-            <i class="fas fa-folder-plus prefix green-text text-darken-3"></i>
-            <select id="course_type" name="course_type" class="validate" required>
-                <option value="" disabled selected>Choose the course type</option>
-                {% for course in courses %}
-                    <option value="{{ course.course_type }}">{{ course.course_type }}</option>
-                {% endfor %}
-            </select>
-            <label for="course_type">Type of Recipe</label>
+                <div class="input-field col s12">
+                    <i class="fas fa-chevron-down prefix green-text text-darken-4"></i>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="" disabled selected><i class="fas fa-chevron-down prefix green-text text-darken-4"></i>Choose Recipe Difficulty</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Master Chef</option>
+                    </select>
+                    <label for="difficulty"></label>
+                </div>
             </div>
+        
+            <br>
+        
+            <!--Recipe Instructions-->
+            <!--Prep time-->
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-user-clock prefix green-text text-darken-3"></i>
+                    <input id="prep_time" name="prep_time" type="text" maxlength="15" class="validate" required>
+                    <label for="prep_time">Preparation time</label>
+                </div>
+           
+        
+            <!--Cooking time-->
+                <div class="input-field col s6">
+                    <i class="fas fa-stopwatch prefix green-text text-darken-3"></i>
+                    <input id="cook_time" name="cook_time" type="text" maxlength="15" class="validate" required>
+                    <label for="cook_time">Cook time</label>
+                </div>
+            </div>
+        
+            <!--Servings-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-users prefix green-text text-darken-3"></i>
+                    <input id="serves" name="serves" type="number" maxlength="15" class="validate" required>
+                    <label for="serves">Serves</label>
+                </div>
+            </div>
+        
+            <!--Ingredients-->
+            <div class="row">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header prefix"><i class="fas fa-chevron-down prefix green-text text-darken-4"></i>Add Ingredients:</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <input id="ingredient_1" name="ingredient_1" type="text" class="validate" placeholder="Ingredient 1:" required>
+                                <label for="ingredient_1"></label>
+                                <input id="ingredient_2" name="ingredient_2" type="text" class="validate" placeholder="Ingredient 2:">
+                                <label for="ingredient_2"></label>
+                                <input id="ingredient_3" name="ingredient_3" type="text" class="validate" placeholder="Ingredient 3:">  
+                                <label for="ingredient_3"></label>   
+                                <input id="ingredient_4" name="ingredient_4" type="text" class="validate" placeholder="Ingredient 4:">
+                                <label for="ingredient_4"></label>
+                                <input id="ingredient_5" name="ingredient_5" type="text" class="validate" placeholder="Ingredient 5:">
+                                <label for="ingredient_5"></label>
+                                <input id="ingredient_6" name="ingredient_6" type="text" class="validate" placeholder="Ingredient 6:">
+                                <label for="ingredient_6"></label>
+                                <input id="ingredient_7" name="ingredient_7" type="text" class="validate" placeholder="Ingredient 7:">
+                                <label for="ingredient_7"></label>                   
+                           </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        
+            <!--Cooking steps-->
+        
+            <div class="row">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header prefix"><i class="fas fa-chevron-down prefix green-text text-darken-4"></i>Add Cooking Instructions here:</div>
+                        <div class="collapsible-body">
+                            <span>
+                                <input id="method_1" name="method_1" type="text" class="validate" placeholder="Step 1:" required>
+                                <label for="method_1"></label>
+                                <input id="method_2" name="method_2" type="text" class="validate" placeholder="Step 2:">
+                                <label for="method_2"></label>
+                                <input id="method_3" name="method_3" type="text" class="validate" placeholder="Step 3:">  
+                                <label for="method_3"></label>
+                                <input id="method_4" name="method_4" type="text" class="validate" placeholder="Step 4:">
+                                <label for="method_4"></label>
+                                <input id="method_5" name="method_5" type="text" class="validate" placeholder="Step 5:">
+                                <label for="method_5"></label>
+                                <input id="method_6" name="method_6" type="text" class="validate" placeholder="Step 6:">
+                                <label for="method_6"></label>
+                                <input id="method_7" name="method_7" type="text" class="validate" placeholder="Step 7:">
+                                <label for="method_7"></label>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        
         </div>
-        <!-- Recipe Information-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-utensils prefix green-text text-darken-3"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Recipe Name</label>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">Recipe url</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">How would you describle your recipe?</label>
-            </div>
+        <div class="modal-footer modal-fixed-footer">
+            <a href="{{ url_for('add_recipe') }}" class="center-align modal-close waves-effect waves-green btn-small">Agree</a>
         </div>
-    </form>
-</div>
+      </div>
+        </form>
+        </div>
+        
+  
+
 
 {% endblock %}

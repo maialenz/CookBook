@@ -17,7 +17,7 @@ h4 {
 body::before {
     content: "";
     background: url('/static/images/wood-background.jpg') no-repeat center center fixed;
-    opacity: 0.5;
+    opacity: 0.2;
     top: 0;
     left: 0;
     bottom: 0;
@@ -44,7 +44,11 @@ body::before {
 
 /*...........MEDIA QUERIES..........*/
 
+/*......MODAL.....*/
 
+#add_recipe_btn {
+    margin-bottom: 20px;
+}
 
     
  

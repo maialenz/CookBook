@@ -3,6 +3,12 @@
 
     <h3 class="center-align text-shadow">All Recipes</h3>
     
+    <!-- Add recipe Modal Trigger -->
+    <div class="center-align">
+        <button id="add_recipe_btn" data-target="add_recipe_modal" class="btn-large modal-trigger blue center-align hvr-grow"><i class="fas fa-plus-circle prefix"></i> Add a New Recipe</button>
+        {% include 'add_recipe.html' %}
+    </div>
+
     <!--iterate through recipes on db and display them in cards-->
     <div class="row">
         {% for recipe in recipes %}
