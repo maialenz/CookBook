@@ -1,30 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
-    {{ recipe.recipe_name }}<br>
-    {{ recipe.course_type}}<br>
-    {{ recipe.recipe_difficulty }}<br>
-    {{ recipe.serves }}<br>
-    {{ recipe.vegetarian }}<br>
-    {% endfor %}
-
-
     <div class="row">
+        {% for recipe in recipes %}
         <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image">
-              <img src="{{ url_for('static', filename='images/wood-background.jpg')}}">
-              <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="fas fa-pen"></i></a>
-
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ recipe.image_url }}">
+                    <a class="btn-floating halfway-fab waves-effect waves-light green">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title text-shadow"><strong>{{ recipe.recipe_name }}</strong></span>
+                    <p>{{ recipe.recipe_description }}</p>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    {% if recipe.vegetarian == "on" %}
+                        <i class="fas fa-carrot light-green-text text-lighten-1 tooltipped"
+                        data-position="bottom" data-tooltip="Vegetarian"></i>
+                    {% endif %}
+                  
+                </div>
             </div>
-            <div class="card-content">
-                <span class="card-title">Tortilla</span>
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-trash-alt"></i></a>
-            </div>
-          </div>
         </div>
-      </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
