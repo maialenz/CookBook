@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align text-shadow">Let's cook this!</h3>
+    
+    <!--iterate through recipes on db and display them in cards-->
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col s12">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ recipe.image_url }}">
+                </div>
+                <div class="card-content">
+                    <p><em>Recipe by: {{ recipe.recipe_by }}</em></p>
+                    <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
+                    {% if recipe.vegetarian == "on" %}
+                       <i class="fas fa-carrot light-green-text text-lighten-1 tooltipped"
+                        data-position="right" data-tooltip="Vegetarian"></i>
+                    {% endif %}
+                    <p>Description: {{ recipe.recipe_description }}</p>
+                    <p>Recipe Difficulty: {{ recipe.recipe_difficulty }}</p>
+                    <p>Serves: {{ recipe.serves }}</p>
+                    <h5>How long does it take to cook this?</h5>
+                    <p>Prep time: {{ recipe.prep_time }}</p>
+                    <p>Cook time: {{ recipe.cook_time }}</p>
+                    <h5>Ingredients:</h5>
+                    <ul>
+                        <li>{{ recipe.ingredient_1 }}</li>
+                        <li>{{ recipe.ingredient_2 }}</li>
+                        <li>{{ recipe.ingredient_3 }}</li>
+                        <li>{{ recipe.ingredient_4 }}</li>
+                        <li>{{ recipe.ingredient_5 }}</li>
+                        <li>{{ recipe.ingredient_6 }}</li>
+                        <li>{{ recipe.ingredient_7 }}</li>
+                    </ul>
+                    <h5>Cooking Steps:</h5>
+                    <ul>
+                        <li>{{ recipe.direction_1 }}</li>
+                        <li>{{ recipe.direction_2 }}</li>
+                        <li>{{ recipe.direction_3 }}</li>
+                        <li>{{ recipe.direction_4 }}</li>
+                        <li>{{ recipe.direction_5 }}</li>
+                        <li>{{ recipe.direction_6 }}</li>
+                        <li>{{ recipe.direction_7 }}</li>
+                    </ul>
+
+
+                   
+            
+                </div>
+                <div class="card-action center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="white-text text-darken-3 btn-small hvr-float-shadow">Back to All recipes</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a class="btn-large center-align waves-effect waves-light green hvr-grow">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                    <a class="btn-large center-align waves-effect waves-light red hvr-grow">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
