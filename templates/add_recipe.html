@@ -20,7 +20,21 @@
                     <label for="course-type">Course type:</label>
                 </div>
             </div>
-            
+
+            <!--Course Difficulty selector-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-star prefix green-text text-darken-3"></i>
+                    <select id="recipe_difficulty" name="recipe_difficulty" class="validate" required>
+                    <option value="" disabled selected>Course difficulty:</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Master Chef">Master Chef</option>
+                    </select>
+                    <label for="course-type">Course type:</label>
+                </div>
+            </div>
+
             <!-- Recipe Information-->
             <h4>Your Recipe's Information:</h4>
 
@@ -160,10 +174,18 @@
             </div>
 
             
-            <!--cancel or add btns to add recipe to db and show recipe on main page for all users to see-->
-            <div class="row center-align">
-                <a class="red btn-small hvr-grow center-align"><i class="fas fa-plus"></i> Cancel</a>
-                <a class="blue btn-small hvr-grow center-align"><i class="fas fa-plus"></i> Add Recipe</a>
+            <!--Add/Cancel Buttons-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!--cancel btn--> 
+                    <button type="" class="btn-large red darken-1 text-shadow hvr-glow">
+                        Cancel <i class="fas fa-plus-square right"></i>
+                    </button> 
+                    <!--add btn-->
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow hvr-glow">
+                        Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
             </div>
         </form>
     </div>
