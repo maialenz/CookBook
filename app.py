@@ -126,7 +126,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
         vegetarian = "on" if request.form.get("vegetarian") else "off"
@@ -134,7 +134,8 @@ def add_recipe():
             "course_type": request.form.get("course_type"),
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
-            "recipe_description": request.form.get("description"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_difficulty": request.form.get("recipe_difficulty"),
             "ingredient_1": request.form.get("ingredient_1"),
             "ingredient_2": request.form.get("ingredient_2"),
             "ingredient_3": request.form.get("ingredient_3"),
@@ -153,7 +154,7 @@ def add_recipe():
             "cook_time": request.form.get("cook_time"),
             "serves": request.form.get("serves"),
             "vegetarian": vegetarian,
-            "recipe_by": session["username"]
+            "recipe_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you! Your recipe has been added!")
@@ -161,6 +162,12 @@ def add_recipe():
 
     courses = mongo.db.courses.find().sort("course_type", 1)
     return render_template("add_recipe.html", courses=courses)
+
+
+@app.route("/full_recipe")
+def full_recipe():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("full_recipe.html", recipes=recipes)
 
 
 if __name__ == "__main__":
