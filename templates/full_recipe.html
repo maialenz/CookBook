@@ -1,75 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align text-shadow">Let's cook this!</h3>
-    
-    <!--iterate through recipes on db and display them in cards-->
-    <div class="row">
-        {% for recipe in recipes %}
-        <div class="col s12">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ recipe.image_url }}">
-                </div>
-                <div class="card-content">
-                    <p><em>Recipe by: {{ recipe.recipe_by }}</em></p>
-                    <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
-                    {% if recipe.vegetarian == "on" %}
-                       <i class="fas fa-carrot light-green-text text-lighten-1 tooltipped"
-                        data-position="right" data-tooltip="Vegetarian"></i>
-                    {% endif %}
-                    <p>Description: {{ recipe.recipe_description }}</p>
-                    <p>Recipe Difficulty: {{ recipe.recipe_difficulty }}</p>
-                    <p>Serves: {{ recipe.serves }}</p>
-                    <h5>How long does it take to cook this?</h5>
-                    <p>Prep time: {{ recipe.prep_time }}</p>
-                    <p>Cook time: {{ recipe.cook_time }}</p>
-                    <h5>Ingredients:</h5>
-                    <ul>
-                        <li>{{ recipe.ingredient_1 }}</li>
-                        <li>{{ recipe.ingredient_2 }}</li>
-                        <li>{{ recipe.ingredient_3 }}</li>
-                        <li>{{ recipe.ingredient_4 }}</li>
-                        <li>{{ recipe.ingredient_5 }}</li>
-                        <li>{{ recipe.ingredient_6 }}</li>
-                        <li>{{ recipe.ingredient_7 }}</li>
-                    </ul>
-                    <h5>Cooking Steps:</h5>
-                    <ul>
-                        <li>1. {{ recipe.direction_1 }}</li>
-                        <li>2. {{ recipe.direction_2 }}</li>
-                        <li>3. {{ recipe.direction_3 }}</li>
-                        <li>4. {{ recipe.direction_4 }}</li>
-                        <li>5. {{ recipe.direction_5 }}</li>
-                        <li>6. {{ recipe.direction_6 }}</li>
-                        <li>7. {{ recipe.direction_7 }}</li>
-                    </ul>
-           
-                </div>
-                <div class="card-action center-align">
-                    <a href="{{ url_for('get_recipes') }}" class="white-text text-darken-3 btn-small hvr-float-shadow">Back to All recipes</a>
-                </div>
-            
-                <div class="row">
-                    <div class="col s12 center-align">
-                         <!--Add/Cancel Buttons-->
-                <div class="row">
-                    <div class="col s12 center-align">
-                        {% if session.user|lower == recipe.recipe_by|lower %}
-                            <!--cancel btn--> 
-                            <a href="{{ url_for('get_recipes') }}" class="btn-small red darken-1 text-shadow hvr-glow">
-                                Delete Recipe <i class="fas fa-trash-alt right"></i>
-                            </a> 
+<h3 class="center-align text-shadow">Let's cook this!</h3>
+
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ recipe.image_url }}">
+            </div>
+            <div class="card-content">
+                <p><em>Recipe by: {{ recipe.recipe_by }}</em></p>
+                <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>
+                {% if recipe.vegetarian == "on" %}
+                <i class="fas fa-carrot light-green-text text-lighten-1 tooltipped" data-position="right"
+                    data-tooltip="Vegetarian"></i>
+                {% endif %}
+                <p>Description: {{ recipe.recipe_description }}</p>
+                <p>Recipe Difficulty: {{ recipe.recipe_difficulty }}</p>
+                <p>Serves: {{ recipe.serves }}</p>
+                <h5>How long does it take to cook this?</h5>
+                <p>Prep time: {{ recipe.prep_time }}</p>
+                <p>Cook time: {{ recipe.cook_time }}</p>
+                <h5>Ingredients:</h5>
+                <ul>
+                    <li>{{ recipe.ingredient_1 }}</li>
+                    <li>{{ recipe.ingredient_2 }}</li>
+                    <li>{{ recipe.ingredient_3 }}</li>
+                    <li>{{ recipe.ingredient_4 }}</li>
+                    <li>{{ recipe.ingredient_5 }}</li>
+                    <li>{{ recipe.ingredient_6 }}</li>
+                    <li>{{ recipe.ingredient_7 }}</li>
+                </ul>
+                <h5>Cooking Steps:</h5>
+                <ul>
+                    <li>{{ recipe.direction_1 }}</li>
+                    <li>{{ recipe.direction_2 }}</li>
+                    <li>{{ recipe.direction_3 }}</li>
+                    <li>{{ recipe.direction_4 }}</li>
+                    <li>{{ recipe.direction_5 }}</li>
+                    <li>{{ recipe.direction_6 }}</li>
+                    <li>{{ recipe.direction_7 }}</li>
+                </ul>
+
+            </div>
+            <div class="card-action center-align">
+                <a href="{{ url_for('get_recipes') }}" class="white-text text-darken-3 btn-small hvr-float-shadow">Back
+                    to All recipes</a>
+            </div>
+
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!--Delete/Edit Buttons-->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            {% if session.user|lower == recipe.recipe_by|lower or session.user == "admin"  %}
+                            <!--delete btn and confirmation modal-->
+                            <a href="#delete_modal" class="btn-floating halfway-fab waves-effect waves-light red left modal-trigger hvr-grow">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                            <!-- modal to delete recipe-->
+                            <div id="delete_modal" class="modal">
+                                <div class="modal-content">
+                                  <h4>Are you sure you want to delete this recipe?</h4>
+                                  <p>Once you have deleted the recipe, you cannot retrieve the recipe again</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red white-text hvr-grow modal-close waves-effect waves-green btn-flat">Delete Recipe</a>
+                                    <a href="{{ url_for('get_recipes') }}" class="btn-small waves-effect right waves-light blue hvr-grow">Cancel</a>                  
+                                </div>
+                              </div>
                             <!--edit btn-->
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue darken-1 text-shadow hvr-glow">
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                class="btn-small light-blue darken-1 text-shadow hvr-glow">
                                 Edit Recipe <i class="fas fa-edit right"></i>
                             </a>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 
-{% endblock %}
+    {% endblock %}
