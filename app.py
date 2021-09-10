@@ -166,8 +166,38 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
+        edit = {
+            "course_type": request.form.get("course_type"),
+            "recipe_name": request.form.get("recipe_name"),
+            "image_url": request.form.get("image_url"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_difficulty": request.form.get("recipe_difficulty"),
+            "ingredient_1": request.form.get("ingredient_1"),
+            "ingredient_2": request.form.get("ingredient_2"),
+            "ingredient_3": request.form.get("ingredient_3"),
+            "ingredient_4": request.form.get("ingredient_4"),
+            "ingredient_5": request.form.get("ingredient_5"),
+            "ingredient_6": request.form.get("ingredient_6"),
+            "ingredient_7": request.form.get("ingredient_7"),
+            "direction_1": request.form.get("direction_1"),
+            "direction_2": request.form.get("direction_2"),
+            "direction_3": request.form.get("direction_3"),
+            "direction_4": request.form.get("direction_4"),
+            "direction_5": request.form.get("direction_5"),
+            "direction_6": request.form.get("direction_6"),
+            "direction_7": request.form.get("direction_7"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "serves": request.form.get("serves"),
+            "vegetarian": vegetarian,
+            "recipe_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
+        flash("Thank you! Your recipe has been updated!")
 
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     courses = mongo.db.courses.find().sort("course_type", 1)
     return render_template("edit_recipe.html", recipe=recipe, courses=courses)
 

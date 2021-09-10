@@ -41,7 +41,13 @@ body::before {
     line-height: 2;
 }
 
-/*...........MEDIA QUERIES..........*/
+/*........MATERIALIZE CARDS..........*/
+
+.card .card-title {
+    font-size: 20px;
+    font-weight: 300;
+}
+/*...........MEDIA QUERIES............*/
 
 /*......MODAL.....*/
 

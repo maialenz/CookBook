@@ -36,28 +36,36 @@
                     </ul>
                     <h5>Cooking Steps:</h5>
                     <ul>
-                        <li>{{ recipe.direction_1 }}</li>
-                        <li>{{ recipe.direction_2 }}</li>
-                        <li>{{ recipe.direction_3 }}</li>
-                        <li>{{ recipe.direction_4 }}</li>
-                        <li>{{ recipe.direction_5 }}</li>
-                        <li>{{ recipe.direction_6 }}</li>
-                        <li>{{ recipe.direction_7 }}</li>
+                        <li>1. {{ recipe.direction_1 }}</li>
+                        <li>2. {{ recipe.direction_2 }}</li>
+                        <li>3. {{ recipe.direction_3 }}</li>
+                        <li>4. {{ recipe.direction_4 }}</li>
+                        <li>5. {{ recipe.direction_5 }}</li>
+                        <li>6. {{ recipe.direction_6 }}</li>
+                        <li>7. {{ recipe.direction_7 }}</li>
                     </ul>
            
                 </div>
                 <div class="card-action center-align">
                     <a href="{{ url_for('get_recipes') }}" class="white-text text-darken-3 btn-small hvr-float-shadow">Back to All recipes</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a class="btn-large center-align waves-effect waves-light green hvr-grow">
-                        <i class="fas fa-pen"></i>
-                    </a>
-                    <a class="btn-large center-align waves-effect waves-light red hvr-grow">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
+            
+                <div class="row">
+                    <div class="col s12 center-align">
+                         <!--Add/Cancel Buttons-->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        {% if session.user|lower == recipe.recipe_by|lower %}
+                            <!--cancel btn--> 
+                            <a href="{{ url_for('get_recipes') }}" class="btn-small red darken-1 text-shadow hvr-glow">
+                                Delete Recipe <i class="fas fa-trash-alt right"></i>
+                            </a> 
+                            <!--edit btn-->
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue darken-1 text-shadow hvr-glow">
+                                Edit Recipe <i class="fas fa-edit right"></i>
+                            </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
