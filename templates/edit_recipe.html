@@ -12,9 +12,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-plus prefix green-text text-darken-3"></i>
                     <select id="course_type" name="course_type" class="validate" required>
-                    <option value="" disabled selected>Choose the course type:</option>
+                    <option value="" disabled>Choose the course type:</option>
                     {% for course in courses %}
+                        {% if course.course_type == recipe.course_type %}
+                        <option value="{{ course.course_type }}" selected>{{ course.course_type }}</option>
+                        {% else %}
                         <option value="{{ course.course_type }}">{{ course.course_type }}</option>
+                        {% endif %}
                     {% endfor %}
                     </select>
                     <label for="course-type">Course type:</label>
@@ -26,7 +30,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-star prefix green-text text-darken-3"></i>
                     <select id="recipe_difficulty" name="recipe_difficulty" class="validate" required>
-                    <option value="" disabled selected>Course difficulty:</option>
+                    <option value="{{ recipe.recipe_difficulty }}" disabled>Course difficulty:</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Moderate">Moderate</option>
                         <option value="Master Chef">Master Chef</option>
@@ -42,8 +46,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix green-text text-darken-3"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50" type="text" class="validate"
-                        required>
+                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50" 
+                    value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
@@ -52,7 +56,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-camera prefix green-text text-darken-3"></i>
-                    <input id="image_url" name="image_url" type="tel" class="validate" required>
+                    <input id="image_url" name="image_url" type="tel" class="validate" value="{{ recipe.image_url }}" required>
                     <label for="image_url">Copy image's URL here</label>
                 </div>
             </div>
@@ -62,7 +66,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix green-text text-darken-3"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="200"
-                        class="materialize-textarea validate" required></textarea>
+                        class="materialize-textarea validate" required>{{ recipe.recipe_description }}</textarea>
                     <label for="recipe_description">Describe your recipe on a few words</label>
                 </div>
             </div>
@@ -71,7 +75,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-users prefix green-text text-darken-3"></i>
-                    <input id="serves" name="serves" type="number" maxlength="15" class="validate" required>
+                    <input id="serves" name="serves" type="number" maxlength="15" class="validate" value="{{ recipe.serves }}" required>
                     <label for="serves">Serves</label>
                 </div>
             </div>
@@ -85,14 +89,14 @@
                 <!--Prep time-->
                 <div class="input-field col s6">
                     <i class="fas fa-user-clock prefix green-text text-darken-3"></i>
-                    <input id="prep_time" name="prep_time" type="text" maxlength="15" class="validate" required>
+                    <input id="prep_time" name="prep_time" type="text" maxlength="15" class="validate" value="{{ recipe.prep_time }}" required>
                     <label for="prep_time">Preparation time</label>
                 </div>
 
                 <!--Cooking time-->
                 <div class="input-field col s6">
                     <i class="fas fa-stopwatch prefix green-text text-darken-3"></i>
-                    <input id="cook_time" name="cook_time" type="text" maxlength="15" class="validate" required>
+                    <input id="cook_time" name="cook_time" type="text" maxlength="15" class="validate" value="{{ recipe.cook_time }}"required>
                     <label for="cook_time">Cook time</label>
                 </div>
             </div>
@@ -108,19 +112,19 @@
                         </div>
                         <div class="collapsible-body">
                             <span>
-                                <input id="ingredient_1" name="ingredient_1" type="text" class="validate" placeholder="Ingredient 1:" required>
+                                <input id="ingredient_1" name="ingredient_1" type="text" class="validate" placeholder="Ingredient 1:" value="{{ recipe.ingredient_1 }}"required>
                                 <label for="ingredient_1"></label>
-                                <input id="ingredient_2" name="ingredient_2" type="text" class="validate" placeholder="Ingredient 2:">
+                                <input id="ingredient_2" name="ingredient_2" type="text" class="validate" value="{{ recipe.ingredient_2 }}" placeholder="Ingredient 2:">
                                 <label for="ingredient_2"></label>
-                                <input id="ingredient_3" name="ingredient_3" type="text" class="validate" placeholder="Ingredient 3:">  
+                                <input id="ingredient_3" name="ingredient_3" type="text" class="validate" value="{{ recipe.ingredient_3 }}" placeholder="Ingredient 3:">  
                                 <label for="ingredient_3"></label>   
-                                <input id="ingredient_4" name="ingredient_4" type="text" class="validate" placeholder="Ingredient 4:">
+                                <input id="ingredient_4" name="ingredient_4" type="text" class="validate" value="{{ recipe.ingredient_4}}" placeholder="Ingredient 4:">
                                 <label for="ingredient_4"></label>
-                                <input id="ingredient_5" name="ingredient_5" type="text" class="validate" placeholder="Ingredient 5:">
+                                <input id="ingredient_5" name="ingredient_5" type="text" class="validate" value="{{ recipe.ingredient_5 }}" placeholder="Ingredient 5:">
                                 <label for="ingredient_5"></label>
-                                <input id="ingredient_6" name="ingredient_6" type="text" class="validate" placeholder="Ingredient 6:">
+                                <input id="ingredient_6" name="ingredient_6" type="text" class="validate" value="{{ recipe.ingredient_6 }}" placeholder="Ingredient 6:">
                                 <label for="ingredient_6"></label>
-                                <input id="ingredient_7" name="ingredient_7" type="text" class="validate" placeholder="Ingredient 7:">
+                                <input id="ingredient_7" name="ingredient_7" type="text" class="validate" value="{{ recipe.ingredient_7 }}" placeholder="Ingredient 7:">
                                 <label for="ingredient_7"></label>                   
                            </span>
                         </div>
@@ -139,19 +143,19 @@
                         </div>
                         <div class="collapsible-body">
                             <span>
-                                <input id="method_1" name="method_1" type="text" class="validate" placeholder="Step 1:" required>
+                                <input id="method_1" name="method_1" type="text" class="validate" value="{{ recipe.direction_1 }}" placeholder="Step 1:" required>
                                 <label for="method_1"></label>
-                                <input id="method_2" name="method_2" type="text" class="validate" placeholder="Step 2:">
+                                <input id="method_2" name="method_2" type="text" class="validate" value="{{ recipe.direction_2 }}" placeholder="Step 2:">
                                 <label for="method_2"></label>
-                                <input id="method_3" name="method_3" type="text" class="validate" placeholder="Step 3:">  
+                                <input id="method_3" name="method_3" type="text" class="validate" value="{{ recipe.direction_3 }}"  placeholder="Step 3:">  
                                 <label for="method_3"></label>
-                                <input id="method_4" name="method_4" type="text" class="validate" placeholder="Step 4:">
+                                <input id="method_4" name="method_4" type="text" class="validate" value="{{ recipe.direction_4 }}" placeholder="Step 4:">
                                 <label for="method_4"></label>
-                                <input id="method_5" name="method_5" type="text" class="validate" placeholder="Step 5:">
+                                <input id="method_5" name="method_5" type="text" class="validate" value="{{ recipe.direction_5 }}" placeholder="Step 5:">
                                 <label for="method_5"></label>
-                                <input id="method_6" name="method_6" type="text" class="validate" placeholder="Step 6:">
+                                <input id="method_6" name="method_6" type="text" class="validate" value="{{ recipe.direction_6 }}" placeholder="Step 6:">
                                 <label for="method_6"></label>
-                                <input id="method_7" name="method_7" type="text" class="validate" placeholder="Step 7:">
+                                <input id="method_7" name="method_7" type="text" class="validate" value="{{ recipe.direction_7 }}" placeholder="Step 7:">
                                 <label for="method_7"></label>
                             </span>
                         </div>
@@ -165,7 +169,11 @@
                     <div class="switch">
                         <i class="fas fa-carrot prefix green-text text-darken-3"></i>
                         <label for="vegetarian">
-                            <input type="checkbox" id="vegetarian" name="vegetarian">
+                            {% if recipe.vegetarian == "on" %}
+                                <input type="checkbox" id="vegetarian" name="vegetarian" checked>
+                            {% else %}
+                                <input type="checkbox" id="vegetarian" name="vegetarian">
+                            {% endif %}
                             <span class="lever"></span>
                             Is this a Vegetarian Recipe?
                         </label>
@@ -178,9 +186,9 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <!--cancel btn--> 
-                    <button type="" class="btn-large red darken-1 text-shadow hvr-glow">
-                        Cancel <i class="fas fa-plus-square right"></i>
-                    </button> 
+                    <a href="{{ url_for('get_recipes') }}" class="btn-large red darken-1 text-shadow hvr-glow">
+                        Cancel <i class="fas fa-window-close right"></i>
+                    </a> 
                     <!--add btn-->
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow hvr-glow">
                         Edit Recipe <i class="fas fa-edit right"></i>
