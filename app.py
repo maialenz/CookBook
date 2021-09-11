@@ -228,9 +228,23 @@ def add_course():
     return render_template("add_course.html")
 
 
+@app.route("/edit_course/<course_id>", methods=["GET", "POST"])
+def edit_course(course_id):
+    if request.method == "POST":
+        submit = {
+            "course_type": request.form.get("course_type")
+        }
+        mongo.db.courses.update({"_id": ObjectId(course_id)}, submit)
+        flash('Course type updated!')
+        return redirect(url_for('get_courses'))
+
+    course = mongo.db.courses.find_one({"_id": ObjectId(course_id)})
+    return render_template("edit_course.html", course=course)
+
+
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
-    full_recipe = mongo.db.recipes.find_one({"id": ObjectId(recipe_id)})
+    full_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full_recipe.html", recipe=full_recipe)
 
 
