@@ -209,6 +209,17 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+@app.route("/get_courses")
+def get_courses():
+    courses = list(mongo.db.courses.find().sort("course_type", 1))
+    return render_template("courses.html", courses=courses)
+
+
+@app.route("/add_course", methods=["GET", "POST"])
+def add_course():
+    return render_template("add_course.html")
+
+
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     full_recipe = mongo.db.recipes.find_one({"id": ObjectId(recipe_id)})
