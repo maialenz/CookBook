@@ -88,18 +88,23 @@
     </header>
 
     <section>
-
         <!-- show flash messages here-->
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
+            {% if messages %}
+                {% for message in messages %}
 
-        <div class="row flashes">
-            <h4 class="red-text text-lighten-2 center-align">{{ message }}</h4>
-        </div>
-
-        {% endfor %}
-        {% endif %}
+                    <div class="row flashes center-align">
+                        <div class="col s6 offset-s3">
+                            <div class="card-panel green accent-1">
+                                <div class="card-content">
+                                    <h4 class="black-text center-align">{{ message }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+            {% endif %}
         {% endwith %}
     </section>
 
@@ -125,6 +130,6 @@
 
     {% block scripts %}
     {% endblock %}
-</body>
 
+</body>
 </html>
