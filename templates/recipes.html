@@ -5,7 +5,9 @@
     
     <!-- Button to redirect to add_recipe.html -->
     <div class="center-align">
-        <a href="{{ url_for('add_recipe') }}" class="btn-large blue hvr-grow">Add your new Recipe!</a>
+        <a href="{{ url_for('add_recipe') }}" class="btn-large blue hvr-grow">
+            Add your new Recipe! <i class="fas fa-plus-square right"></i>
+        </a>
     </div>
 
     <!--iterate through recipes on db and display them in cards-->

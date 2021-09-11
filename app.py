@@ -217,6 +217,14 @@ def get_courses():
 
 @app.route("/add_course", methods=["GET", "POST"])
 def add_course():
+    if request.method == "POST":
+        course = {
+            "course_type": request.form.get("course_type")
+        }
+        mongo.db.courses.insert_one(course)
+        flash("New Course Added!")
+        return redirect(url_for("get_courses"))
+
     return render_template("add_course.html")
 
 
