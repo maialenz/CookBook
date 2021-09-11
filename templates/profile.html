@@ -9,9 +9,45 @@
             <h4 class="center-align red-text text-darken-1">
                 Welcome to your recipe book, {{ username }}
             </h4>
-            <p class="center-align">What are you going to cook next?</p>
+            <p class="center-align">What do you want to do today?</p>
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card grey lighten-3">
+        <div class="card-content black-text">
+          <span class="card-title center-align"><h4>Get Inspired!</h4></span>        
+          <p>Have a look at others recipes! Why not try one and surprise your family and friends?</p>
+        </div>
+        <div class="card-action center-align">
+            <a href="{{ url_for('get_recipes') }}" class="btn-large green hvr-grow">
+                See All Recipes<i class="fas fa-eye right"></i>
+            </a>   
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card grey lighten-3">
+        <div class="card-content black-text">
+          <span class="card-title center-align"><h4>Add a new recipe</h4></span>        
+          <p>Share your greatest culinary creations or those family traditions with others!</p>
+        </div>
+        <div class="card-action center-align">
+            {% if session.user %}
+            <a href="{{ url_for('add_recipe') }}" class="btn-large blue hvr-grow">
+                Add it here! <i class="fas fa-plus-square right"></i>
+            </a>
+            {% endif %}
+      </div>
+    </div>
+</div>
+
+
+
+            
 
 {% endblock %}
