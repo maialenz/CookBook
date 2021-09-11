@@ -10,7 +10,29 @@
         </a>
     </div>
 
+    <!-- Search Bar -->
+    <div class="row search-bar center-align" id="search_bar">
+    <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row center-align search-area">
+                <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
+                    <input type="text" name="query" id="query" placeholder="Search recipe" minlength="3"
+                        class="validate" required>
+                    <label for="query"></label>
+                </div>
+                <div class="col s12">
+                    <button type="submit" class="btn ">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="{{ url_for('get_recipes') }}" class="btn red">
+                        <i class="fas fa-redo"></i>
+                    </a>
+                </div>
+            </div> 
+        </form>
+    </div>
+
     <!--iterate through recipes on db and display them in cards-->
+    {% if recipes|length > 0 %}
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6">
@@ -53,5 +75,9 @@
         </div>
         {% endfor %}
     </div>
-
+    {% else %}
+        <h4 class="center-align red-text">
+            Sorry, we couldn't find any results for this search
+        </h4>
+    {% endif %}
 {% endblock %}
