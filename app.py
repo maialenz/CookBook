@@ -242,6 +242,13 @@ def edit_course(course_id):
     return render_template("edit_course.html", course=course)
 
 
+@app.route("/delete_course/<course_id>")
+def delete_course(course_id):
+    mongo.db.courses.remove({"_id": ObjectId(course_id)})
+    flash('Course removed!')
+    return redirect(url_for('get_courses'))
+
+
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     full_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
