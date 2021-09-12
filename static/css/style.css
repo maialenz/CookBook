@@ -44,6 +44,15 @@ body::before {
     line-height: 2;
 }
 
+/*..............FOOTER..............*/
+
+.list-inline-item {
+    display: inline;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
 /*........MATERIALIZE CARDS..........*/
 
 .card .card-title {
