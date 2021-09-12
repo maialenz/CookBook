@@ -29,6 +29,9 @@ body::before {
     background-size: cover;
 }
 
+.row {
+    margin: 1.8rem 0;
+}
 /*..........HEADER.......... */
 
 .brand-logo {
@@ -47,13 +50,15 @@ body::before {
     font-size: 20px;
     font-weight: 300;
 }
-/*...........MEDIA QUERIES............*/
 
 /*......MODAL.....*/
 
-#add_recipe_btn {
-    margin-bottom: 20px;
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+    margin: 6px;
 }
 
-    
+/*...........MEDIA QUERIES............*/
+
+@media only screen and (max-width: 500px){
  
+}
