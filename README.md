@@ -161,9 +161,9 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 ### Skeleton Plane
 
 #### Wireframes:
-  - [Mobile Wireframe](docs/wireframes/Mobile.png)
-  - [Ipad Wireframe](docs/wireframes/Ipad.png)
-  - [Desktop Wireframe](docs/wireframes/Desktop.png)
+  - [Mobile Wireframe](docs/wireframes/Mobile-wireframes.png)
+  - [Ipad Wireframe](docs/wireframes/Ipad-wireframes.png)
+  - [Desktop Wireframe](docs/wireframes/Desktop-wireframes.png)
 
 
 ## DESIGN
