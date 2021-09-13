@@ -20,7 +20,7 @@
                     <label for="query"></label>
                 </div>
                 <div class="col s12">
-                    <button type="submit" class="btn ">
+                    <button type="submit" class="btn" aria-label="search">
                         <i class="fa fa-search"></i>
                     </button>
                     <a href="{{ url_for('get_recipes') }}" class="btn red">
@@ -38,7 +38,7 @@
         <div class="col s12 m6">
             <div class="card large">
                 <div class="card-image">
-                    <img src="{{ recipe.image_url }}">
+                    <img src="{{ recipe.image_url }}" alt="image of a food dish">
                 </div>
                 <div class="card-content">
                     <span class="card-title"><strong>{{ recipe.recipe_name }}</strong></span>

@@ -2,9 +2,25 @@
 
 /*..........GENERAL......... */
 
+html {
+    background-color: white  !important;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.page-footer {
+    padding-top: 20px;
+    color: white ;
+    background-color: white  !important;
+}
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #013220;
+    font-weight: 600;
 }
 
 h4 {
@@ -13,6 +29,7 @@ h4 {
     font-size: 20px;
     text-transform: uppercase;
 }
+
 
 /* code taken from: https://coder-coder.com/background-image-opacity/ */
 body::before {
@@ -32,25 +49,49 @@ body::before {
 .row {
     margin: 1.8rem 0;
 }
+
+/*.........BTN...............*/
+
+a.btn-large.blue.hvr-grow {
+    color: black;
+}
+
 /*..........HEADER.......... */
 
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    font-family: 'Love ya like a sister', sans-serif;
+    padding: 0;
+}
 .brand-logo {
     margin-left: 30px;
 }
 
+nav ul a {
+    color: black;
+}
+
 /*..........FLASHED MESSAGES.........*/
 
-.flashes h4 {
-    line-height: 2;
+section .row .flashes{
+    margin-top: 30px;
 }
 
 /*..............FOOTER..............*/
 
+ul.list-inline.social-links {
+    margin: 0px;
+    padding: 0px;
+}
+
 .list-inline-item {
     display: inline;
-    font-size: 20px;
-    margin-top: 5px;
-    padding: 5px;
+    font-size: 30px;
+    margin: 2px;
+    padding: 2px;
 }
 
 /*........MATERIALIZE CARDS..........*/
@@ -58,6 +99,10 @@ body::before {
 .card .card-title {
     font-size: 20px;
     font-weight: 300;
+}
+
+strong {
+    font-weight: 800;
 }
 
 /*......MODAL.....*/
@@ -69,5 +114,10 @@ body::before {
 /*...........MEDIA QUERIES............*/
 
 @media only screen and (max-width: 500px){
- 
+    
+    nav .brand-logo.left {
+        font-size: 18px;
+        left: 0.5rem;
+    }
+    
 }

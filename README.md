@@ -196,9 +196,9 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### **Imagery**
 
-- As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL if they want to show an image as a thumbnail of the recipe. 
+- As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL to add the respective image to the top of the recipe. This image can be used as a guide of the end product of that certain recipe.. 
 
-- The hero image will be the only image that it will be included in this project.
+- As the background image would slow down the website loading time, I decided to use a solid light background color. This way, the user doesn't get distracted by the big background image, and the recipe images are more visible. (---------------------------------------------could change--------------------------------------------)
 
 ---
 
@@ -206,7 +206,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - The favicon was created using [Favicon.io](https://favicon.io/favicon-converter/) and the logo used to create it was created using an online application called [Canva](https://www.canva.com/). It represents cooking tools nodding the  main subject of the website. The use of the favicon makes it easier to recognize the application tab in between others that the user might have had already opened.
 
-- The logo's design represents theme of the site and is easily recogniseable by users as a movie orientated game.
+- As a logo, I used the Name of the website, as the words already explain what the website is about.
 
 ---
 

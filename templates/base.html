@@ -46,7 +46,7 @@
         <!-- top navbar-->
         <nav class="nav-extended text-shadow light-green lighten-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="left brand-logo">The Homemade Kitchen</a>
+                <a href="{{ url_for('get_recipes') }}" class="left black-text brand-logo">The Homemade Kitchen</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -113,12 +113,13 @@
         {% endblock %}
     </main>
 
+  
+
     <!--Footer-->
-    <footer>
-        <div class="container">
+    <footer class="page-footer">
             <div class="row center-align">
-                <div class="footer-copyright col s12">
-                    <div class="container center-align col s12">
+                <div class="footer-copyright green lighten-5 col s12">
+                    <div class="container green lighten-5 black-text center-align col s12">
                         © 2021 - TheHomemadeKitchen - Maialen
                     </div>
                 </div>
@@ -141,7 +142,7 @@
                 </div>
                 
             </div>
-        </div>
+        
         
             </div>
         </div>
