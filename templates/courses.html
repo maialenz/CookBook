@@ -5,7 +5,7 @@
 
 <!-- Button to redirect to add_recipe.html -->
 <div class="center-align">
-    <a href="{{ url_for('add_course') }}" class="btn-large blue hvr-grow">
+    <a href="{{ url_for('add_course') }}" class="btn-large light-blue white-text text-shadow hvr-grow">
       Add a new course!  <i class="fas fa-plus-square right"></i>
     </a>
 </div>
@@ -13,7 +13,7 @@
 <div class="row">
   {% for course in courses %}
   <div class="col s12 m3">
-    <div class="card green darken-5 text-shadow center-align">
+    <div class="card teal lighten-1 center-align">
       <div class="card-content white-text">
         <span class="card-title">{{ course.course_type }}</span>
       </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <a href="{{ url_for('edit_course', course_id=course._id) }}"
-          class="btn-floating halfway-fab waves-effect right waves-light  amber darken-1 hvr-grow">
+          class="btn-floating halfway-fab waves-effect right waves-light green darken-1 hvr-grow">
           <i class="fas fa-pen"></i>
         </a>
       </div>

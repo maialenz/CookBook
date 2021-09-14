@@ -402,6 +402,22 @@ def full_recipe(recipe_id):
     return render_template("full_recipe.html", recipe=full_recipe)
 
 
+@app.errorhandler(404)
+def handle_404(e):
+    '''
+    If a 404 error happens, the user is redirected to 404.html page.
+    '''
+    return render_template('404.html')
+
+
+@app.errorhandler(500)
+def server_error(e):
+    """
+    If a 500 error occurs, the user is directed to 500.html page.
+    """
+    return render_template('500.html')
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

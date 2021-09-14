@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="green-text darken-1 center-align">Add a new recipe here!</h3>
+    <h3 class="teal-text lighten-1 center-align">Add a new recipe here!</h3>
 
     <div class="row card-panel grey lighten-5">
 
@@ -10,7 +10,7 @@
             <!--Course Type Selector-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-plus prefix green-text text-darken-3"></i>
+                    <i class="fas fa-folder-plus prefix teal-text text-lighten-1"></i>
                     <select id="course_type" name="course_type" class="validate" required>
                     <option value="" disabled selected>Choose the course type:</option>
                     {% for course in courses %}
@@ -24,7 +24,7 @@
             <!--Course Difficulty selector-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-star prefix green-text text-darken-3"></i>
+                    <i class="fas fa-star prefix teal-text text-lighten-1"></i>
                     <select id="recipe_difficulty" name="recipe_difficulty" class="validate" required>
                     <option value="" disabled selected>Course difficulty:</option>
                         <option value="Beginner">Beginner</option>
@@ -41,7 +41,7 @@
             <!--Recipe name-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-utensils prefix green-text text-darken-3"></i>
+                    <i class="fas fa-utensils prefix teal-text text-lighten-1"></i>
                     <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50" type="text" class="validate"
                         required>
                     <label for="recipe_name">Recipe Name</label>
@@ -51,7 +51,7 @@
             <!--Recipe url-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-camera prefix green-text text-darken-3"></i>
+                    <i class="fas fa-camera prefix teal-text text-lighten-1"></i>
                     <input id="image_url" name="image_url" type="tel" class="validate" required>
                     <label for="image_url">Copy image's URL here</label>
                 </div>
@@ -60,7 +60,7 @@
             <!--Recipe Description-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix green-text text-darken-3"></i>
+                    <i class="fas fa-align-left prefix teal-text text-lighten-1"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="60"
                         class="materialize-textarea validate" required></textarea>
                     <label for="recipe_description">Describe your recipe on a few words</label>
@@ -70,7 +70,7 @@
             <!--Servings-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-users prefix green-text text-darken-3"></i>
+                    <i class="fas fa-users prefix teal-text text-lighten-1"></i>
                     <input id="serves" name="serves" type="number" maxlength="15" class="validate" required>
                     <label for="serves">Serves</label>
                 </div>
@@ -84,14 +84,14 @@
             <div class="row">
                 <!--Prep time-->
                 <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-user-clock prefix green-text text-darken-3"></i>
+                    <i class="fas fa-user-clock prefix teal-text text-lighten-1"></i>
                     <input id="prep_time" name="prep_time" type="text" maxlength="15" class="validate" required>
                     <label for="prep_time">Preparation time</label>
                 </div>
 
                 <!--Cooking time-->
                 <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-stopwatch prefix green-text text-darken-3"></i>
+                    <i class="fas fa-stopwatch prefix teal-text text-lighten-1"></i>
                     <input id="cook_time" name="cook_time" type="text" maxlength="15" class="validate" required>
                     <label for="cook_time">Cook time</label>
                 </div>
@@ -103,7 +103,7 @@
                 <ul class="collapsible">
                     <li>
                         <div class="collapsible-header prefix">
-                            <i class="fas fa-chevron-down prefix green-text text-darken-4"></i>
+                            <i class="fas fa-chevron-down prefix teal-text text-lighten-1"></i>
                             Add Recipe ingredients:
                         </div>
                         <div class="collapsible-body">
@@ -134,7 +134,7 @@
                 <ul class="collapsible">
                     <li>
                         <div class="collapsible-header prefix">
-                            <i class="fas fa-chevron-down prefix green-text text-darken-4"></i>
+                            <i class="fas fa-chevron-down prefix teal-text text-lighten-1"></i>
                             Add Cooking Instructions here:
                         </div>
                         <div class="collapsible-body">
@@ -163,7 +163,8 @@
             <div class="row">
                 <div class="input-field center-align col s12">
                     <div class="switch">
-                        <i class="fas fa-carrot prefix green-text text-darken-3"></i>
+                        <i class="fas fa-carrot prefix green-text text-darken-5 tooltipped"
+                        data-position="left" data-tooltip="Vegetarian"></i>
                         <label for="vegetarian">
                             <input type="checkbox" id="vegetarian" name="vegetarian">
                             <span class="lever"></span>

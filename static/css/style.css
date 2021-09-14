@@ -19,7 +19,7 @@ html {
 
 h3 {
     font-family: 'Montserrat Alternates', sans-serif;
-    color: #013220;
+    color: #26a69a;
     font-weight: 600;
 }
 
@@ -71,7 +71,7 @@ nav .brand-logo {
 }
 
 nav ul a {
-    color: black;
+    color: #fff;
 }
 
 /*..........FLASHED MESSAGES.........*/

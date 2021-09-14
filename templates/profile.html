@@ -6,10 +6,10 @@
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card-panel">
-            <h3 class="center-align green-text text-darken-1">
+            <h3 class="center-align teal-text text-darken-1">
                 Welcome to your recipe book, {{ username }}
             </h3>
-            <p class="center-align">What do you want to do today?</p>
+            <h5 class="center-align">What do you want to do today?</h5>
         </div>
     </div>
 </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="card-action center-align">
             {% if session.user %}
-            <a href="{{ url_for('add_recipe') }}" class="btn-large blue hvr-grow">
+            <a href="{{ url_for('add_recipe') }}" class="btn-large hvr-grow">
                 Add it here! <i class="fas fa-plus-square right"></i>
             </a>
             {% endif %}
@@ -55,7 +55,7 @@
           <p>Do users need more variation of course types? Give them more choices here</p>
         </div>
         <div class="card-action center-align">
-            <a href="{{ url_for('add_course') }}" class="btn-large blue hvr-grow">
+            <a href="{{ url_for('add_course') }}" class="btn-large hvr-grow">
                 Add it here! <i class="fas fa-plus-square right"></i>
             </a>
       </div>

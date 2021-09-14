@@ -11,7 +11,7 @@
             <!--Username field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-plus prefix green-text text-darken-3"></i>
+                    <i class="fas fa-user-plus prefix teal-text text-lighten-1"></i>
                     <input id="username" name="username" type="text" minlength="5" 
                     maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
@@ -21,7 +21,7 @@
             <!--password field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-lock prefix green-text text-darken-3"></i>
+                    <i class="fas fa-lock prefix teal-text text-lighten-1"></i>
                     <input id="password" name="password" type="password" minlength="5" 
                     maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
@@ -31,7 +31,7 @@
             <!--confirm password field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-lock prefix green-text text-darken-3"></i>
+                    <i class="fas fa-lock prefix teal-text text-lighten-1"></i>
                     <input id="confirm_password" name="confirm_password" type="password" 
                     minlength="5" maxlength="15" pattern="^[a-zA-Z0-9@._]{5,15}$" class="validate" required>
                     <label for="confirm_password">Confirm Password</label>
@@ -40,7 +40,7 @@
 
             <!--Submit button to register and create new user on Database-->
             <div class="row">
-                <button type="submit" class="col s12 btn-large green lighten-1 text-shadow" aria-label="register">
+                <button type="submit" class="col s12 btn-large teal lighten-1 text-shadow" aria-label="register">
                     Register <i class="fas fa-sign-in-alt"></i>
                 </button>
             </div>
@@ -52,8 +52,8 @@
 <div class="row">
     <div class="col s12">
         <p class="center-align">
-            Still not part of the family? <br>
-            <a href="{{ url_for('login') }}" class="green-text text-darken-2 btn-large white hvr-grow">Log In Here!</a>
+            Already a member? <br>
+            <a href="{{ url_for('login') }}" class="teal-text text-lighten-1 btn-large white hvr-grow">Log In Here!</a>
         </p>
     </div>
 </div>

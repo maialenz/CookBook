@@ -4,17 +4,17 @@
     <h3 class="center-align text-shadow">All Recipes</h3>
 
 
-    <!-- Button to redirect to add_recipe.html -->
+    <!-- Button to allow user to add recipe. If user is not logged in, will be redirected to login page -->
     {% if session.user|lower %}
     <div class="center-align">
-        <a href="{{ url_for('add_recipe') }}" class="btn-large blue hvr-grow">
+        <a href="{{ url_for('add_recipe') }}" class="btn-large hvr-grow">
             Add your new Recipe! <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 
     {% else %}
     <div class="center-align">
-        <a href="{{ url_for('login') }}" class="btn-large blue hvr-grow">
+        <a href="{{ url_for('login') }}" class="btn-large hvr-grow">
             Log in to add your recipes! <i class="fas fa-plus-square right"></i>
         </a>
     </div>
