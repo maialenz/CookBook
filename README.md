@@ -39,26 +39,32 @@ The website will be responsive and accessible on all devices, but it's optimized
 - [Existing Features](#existing-features)
 - [Features left to implement](#features-left-to-implement)
 
-4. [TECHNOLOGIES USED](#technologies-used)
+4. [DATABASE MODEL](#database-model)
+
+- [Users Data](#users-data)
+- [Recipes Data](#recipes-data)
+- [Courses Data](#courses-data)
+
+5. [TECHNOLOGIES USED](#technologies-used)
 
 - [Syntax](#syntax)
 - [Frameworks, Libraries & Programs](#frameworks-libraries-&-programs)
 
-5. [TESTING](#testing)
+6. [TESTING](#testing)
 
 - [Testing document](TESTING.md)
 
-6. [DEPLOYMENT](#deployment)
+7. [DEPLOYMENT](#deployment)
 
 - [Heroku](#heroku)
 - [Forking the repository](#forking-the-GitHub-repository)
 - [Making a local clone](#making-a-local-clone)
 
-7. [CREDITS](#credits)
+8. [CREDITS](#credits)
 
-8. [REFERENCES](#references)
+9. [REFERENCES](#references)
 
-9. [ACKNOWLEDGEMENTS](#acknowledgements)
+10. [ACKNOWLEDGEMENTS](#acknowledgements)
 
 ## UX
 
@@ -258,7 +264,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 ### **Logo**
 
 - The favicon was created using [Favicon.io](https://favicon.io/favicon-converter/) and the logo used to create it was created using an online application called [Canva](https://www.canva.com/). It represents cooking tools nodding the  main subject of the website. The use of the favicon makes it easier to recognize the application tab in between others that the user might have had already opened.
-( This logo was not used in the final draft)
+( *This logo was not used in the final draft*)
 
 - As a logo, I used the Name of the website, as the words already explain what the website is about. The typography used was imported from google fonts called 'Love Ya Like a sister'.
 
@@ -266,11 +272,55 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### **Database Model**
 
-- This project uses MongoDB for all database aspects. MongoDB is a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like documents with optional schemas.
+- This project uses MongoDB for all database aspects. MongoDB is a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like (BSON) documents with optional schemas.
 
 - The main schema used in this project is ObjectId.
 
-- ((add database images here))
+- Users data:
+
+      | Title              | Data Type     |
+      | ------------------ |:-------------:|
+      | _id                | ObjectId      |
+      | username           | string        |
+      | password           | string        |
+
+- Recipes data:
+
+      | Title              | Data Type     |
+      | ------------------ |:-------------:|
+      | _id                | ObjectId      |
+      | course_type        | string        |
+      | recipe_name        | string        |
+      | recipe_description | string        |
+      | image_url          | string        |
+      | recipe_difficulty  | string        |
+      | ingredient_1       | string        |
+      | ingredient_2       | string        |
+      | ingredient_3       | string        |
+      | ingredient_4       | string        |
+      | ingredient_5       | string        |
+      | ingredient_6       | string        |
+      | ingredient_7       | string        |
+      | direction_1        | string        |
+      | direction_2        | string        |
+      | direction_3        | string        |
+      | direction_4        | string        |
+      | direction_5        | string        |
+      | direction_6        | string        |
+      | direction_7        | string        |
+      | prep_time          | string        |
+      | cook_time          | string        |
+      | serves             | string        |
+      | vegetarian         | string        |
+      | recipe_by          | string        |
+
+- Courses data:
+
+      | Title              | Data Type     |
+      | ------------------ |:-------------:|
+      | _id                | ObjectId      |
+      | course_type        | string        |
+      
 ---
 
 ## FEATURES
