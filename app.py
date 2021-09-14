@@ -22,7 +22,7 @@ DB = mongo.db
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find())
+    recipes = list(mongo.db.recipes.find().sort('recipe_name', 1))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -108,6 +108,7 @@ def login():
 
         else:
             # if username doesn't exist
+            session['user'] = True
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -129,13 +130,17 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remore user from session cookie
+    session.pop("user", None)
     flash("See you soon!")
-    session.pop("user")
     return redirect(url_for("login"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     if request.method == "POST":
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         recipe = {
@@ -174,6 +179,12 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     if request.method == "POST":
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         edit = {
@@ -206,13 +217,17 @@ def edit_recipe(recipe_id):
         flash("Thank you! Your recipe has been updated!")
         return redirect(url_for("get_recipes"))
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     courses = mongo.db.courses.find().sort("course_type", 1)
     return render_template("edit_recipe.html", recipe=recipe, courses=courses)
 
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("The recipe has been removed!")
     return redirect(url_for("get_recipes"))
@@ -221,11 +236,21 @@ def delete_recipe(recipe_id):
 @app.route("/get_courses")
 def get_courses():
     courses = list(mongo.db.courses.find().sort("course_type", 1))
+
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     return render_template("courses.html", courses=courses)
 
 
 @app.route("/add_course", methods=["GET", "POST"])
 def add_course():
+
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     if request.method == "POST":
         course = {
             "course_type": request.form.get("course_type")
@@ -239,6 +264,12 @@ def add_course():
 
 @app.route("/edit_course/<course_id>", methods=["GET", "POST"])
 def edit_course(course_id):
+    course = mongo.db.courses.find_one({"_id": ObjectId(course_id)})
+
+    if 'user' not in session:
+        flash('You have to be logged in to see this page')
+        return render_template('404.html')
+
     if request.method == "POST":
         submit = {
             "course_type": request.form.get("course_type")
@@ -247,7 +278,6 @@ def edit_course(course_id):
         flash('Course type updated!')
         return redirect(url_for('get_courses'))
 
-    course = mongo.db.courses.find_one({"_id": ObjectId(course_id)})
     return render_template("edit_course.html", course=course)
 
 
