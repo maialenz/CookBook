@@ -1,4 +1,4 @@
-# **The Homemade Kitchen**</center>
+# <center>**The Homemade Kitchen**
 
 ## Milestone 3 Project - Backend Development Milestone Project
 
@@ -9,7 +9,7 @@
 
 This website is a virtual cookbook to save and keep track of personal recipes and allow other users to share with others their own culinary creations, family traditions, etc.
 
-The website will be responsive and accessible on all devices, but it's optimized to be seen on a small/medium screens, as the user will want to have the device close to them to be able to cook along with it. The website will be visually pleasant, focusing on the posibility to update the data available to the user. It will be aimed for those people who want to store and share their own cooking creations with others.
+The website will be responsive and accessible on all devices, but it's optimized to be seen on medium screens, as the user will want to have the device close to them to be able to cook along with it. The website will be visually simple but pleasant, focusing on the posibility to update the data available to the user. It will be aimed for those people who want to store and share their own cooking creations with others.
 
 ---
 
@@ -89,7 +89,7 @@ The website will be responsive and accessible on all devices, but it's optimized
 
 - #### User needs
 
-The main goal of this website is to convert visitors into active users. As this website aims to create a sense of comunity for those users that want to share their own recipes, the option to create, edit and delete recipes will be only available to registered users. To convert a visitor the landing page will try to convince users to register, which will show a bright palette as well as aesthetically pleasing imagery to invite users to start cooking themselves.
+The main goal of this website is to convert visitors into active users. As this website aims to create a sense of community for those users that want to share their own recipes, all users will be able to search and see all recipes, leaving the options to create, edit and delete recipes will be only available to registered users. To convert a visitor the landing page will display all recipes to convince users to continue using the website, allowing them to become registered users. The website will show a bright palette as well as minimalistic but aesthetically pleasing imagery to invite users to start cooking themselves.
 
 There is already thousands of recipe and cooking websites, but not many of them allow users to contribute into them. Many of us have recipe notebooks at home, that when most needed are not accessible, or we cannot find them. But most of us have the phones close to us most time of the day. Taking this in account, this website is the perfect place to create a profile where you can savely store our most precious recipes, where will be saved for (virtually) forever. 
 
@@ -110,7 +110,7 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 
   - They also need to have basic understanding on how to select and navigate the page.
 
-  - This page can be done with Materialize framework to create a structure and implement sections that the user needs. The website will be kept separated in 5 main sections (landing, sign in, log in,, add recipe, edit and delete recipe) but easily accessible from the homepage (the functionalities of add edit and delete will be just available for registered users). 
+  - This page will be done with Materialize framework to create a responsive structure and implement sections that the user needs. The website will be kept separated in 5 main sections (landing, sign in, log in,, add recipe, edit and delete recipe) but easily accessible from the homepage (the functionalities of add edit and delete will be just available for registered users). The admin will have an extra section to add more courses to allow the searches be more specific and easier to group for users. 
 
 ---
 
@@ -138,23 +138,75 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 ---
 ### Structure Plane
 
-- The structure of the site will be layed out in five pages.The landing page (homepage) where the user will be able to easily register, log in, add recipe, edit and delete recipe (for registered users only) and a logout option for those logged in. The basic structure of the website is:
+- The structure of the site will be layed out in four pages (five pages for admin).The landing page (homepage) where the user will be able to see all the recipes available. Anonimus users will be allowed to navigate through all recipes, being able to see them in its own page, to easily read the recipes. If an anonimus user wants to become a member, they have the option to log in, add recipe, edit and delete recipe their own recipes once they have registered and logged in. When a user logs in, they will directed to their profile, where they can choose what to do. Members are only able to manipulate the recipes they have created. Only the admin user has access to all functionalities. The admin user has the capability to add new courses, which will then be available in the dropdown for users to select. Logged in users will have the logout option to stop their session cookies. The basic structure of the website is:
 
   - Header/Navigation - Top Level
 
-    - The navigation menu will be a hamburger/bars menu icon on smaller screen sizes. It will be fixed/sticky in the top right corner allowing the user to navigate with a single hand. The navigation bar will have extra links with access to the CRUD functionality for members only.
-    - Withing the header, in the middle, there will be a search bar so the user will have a fast access to it.
-    - The header will have a hero section to create a pleasant look so the users enjoy the experience of using the site. It will be divided in two colums: One column which includes a hero image with information about the website and the other column will contain the registration form, a log in link for members, and a call to action as a sign up button.
+    - The navigation menu will be a hamburger/bars menu icon on smaller and medium screen sizes. It is not sticky as the users have all available functionality in various places repited on the website. The hamburger menu will be located in the top right corner allowing the user to navigate with a single hand. The navigation bar will have extra links with access to the CRUD functionality for members only. 
+      - Anonimus users will only be able to see the following links: Home (all recipes), Log in and Register.
+      - Registered and logged in users will be able to see the following links: Home (all recipes, available to all), Profile(personalized with each users name and options to add a recipe and see all recipe links), Add recipe (direct link to a form to add a new recipe), Log Out (end session). 
+      - Admin user has access to all links to functionality registered users have plus the option to add a course.
+    - The navigation bar will be responsible and will reduce to a hamburger size to keep all links tidy and organized. The hamburger menu will be positioned on the right side so users can access to the navigation links with the right hand. 
 
-  - Body - Main Page Elements: 
-
-    - It will contain all the recipes in cards. The user will be able to click on a call to action button to extend the recipe and show it on the middle of the page.
-    - The pages specific to using forms will have minimal extra content to make the forms the only imporatnt part of the section
   
+  - Body 
+  
+    - Home Page Elements: 
+
+      - Under the navigation bar, anonimus users will see a button prompting them to register or log in to be able to share their recipes. Logged in users and admin user will be able to see a button linked to add recipe. This allow the user to have the option to add a recipe from the main page without the need to open the hamburger menu to access the navigation link. The idea of this is to allow the user navigate the website with as few clicks as possible. 
+      - Under the button there will be a search bar so the user will be able to find their recipe on a fast manner. This functionality is available to all type of users.
+      - All recipes will be displayed on individual cards, which will contain an image as a visual representation and guide for a finished product, the card title, a very short description, a little carrot to with a toolkit if the recipe is vegetarian and a button to display the whole recipe and all the data on a separate page.
+      - At the bottom of each recipe will have a delete button on the left and a green edit button on the right. This will only be visible for recipes created by the the user or for the admin user. 
+      - The delete call to action button will open a modal to ask the user to verify their decision.
+      - The edit button will open the edit form with populated fields so the user can see the precious data and choose what to change.
+
+    - Register Page Elements:
+
+      - A card containing a form with input fields for a possible user to enter their username, password and another input field to confirm the entered password.
+      - A call to action button to add the username and password to the MongoDB database. If successful the user will be redirected to their new profile page and displayed a flash message confirming the registration to the database.
+      - The new registered user will now have access to the rest of functionalities (add, edit and delete recipes)
+
+    - Profile Page Elements (only accessible to authenticated and authorized users):
+
+      - The user will be welcomed with a message and the users username. 
+      - A flash message will give feedback when logged in.
+      - Three cards divided in two columns will display options to the user:
+        - See all recipes: redirects the user to the home page displaying all recipes
+        - Add a new recipe: redirects the user to the add recipe form
+        - ONLY FOR ADMIN: Add a course: redirects the admin user to the add a course form
+      - A Logout button for users who want to end the session from the profile page.
+
+    - Add Recipe Page Elements (accessible to all logged users):
+
+      - The user will be presented with a form with inputs and dropdowns the user to fill and select options.
+      - The required inputs and dropdowns will be underlined in red color if not filled. Properly filled fields will be underlined in green.
+      - All fields will have placeholders or labels to hint the user on the information needed for each input.
+      - A switch to choose if the recipe is vegetarian or not
+      - The user will have two buttons at the end to cancel and be redirected to the home page or a submit button to add the data to MongoDB. Once the recipe has been successfully registered the user will get a flash message as feedback and will be redirected to the home page where the user will be able to see all the recipes including the new inserted one.
+  
+    - Add Course Page Elements (accessible only to admin):
+
+      - A single input form to allow the admin user inset extra course types to database. All the courses will be displayed once the admin clicks on either the cancel or add buttons.
+      - All new courses the admin adds are available when the user is creating or editing a recipe under the 'recipe type' dropdown.
+
+    - Edit recipe (not accessible from the navbar):
+      
+      - Users are able to access to this page from two different places: on the homepage under the recipe cards and under the view of the full recipe
+      -  When clicked on the green edit button, the user will be able to see the information that they inserted previously, so they can review the information and make the necessary changes to them.
+      - When the user submits the form, this information updates the data already stored on the database under the specific id number.
+
+    - Manage Course (only available to admin user):
+      
+      - Admin will be shown all the courses available on cards. At the bottom of the card the admin user is allowed to edit or delete the course chosen.
+      - The delete button will trigger a modal prompting the admin user to confirm if they want to delete or cancel the action.
+      - The edit button will open the course form already filled, so the admin user can edit it and update the database with the new information.
+
   - Footer - Bottom Level
    
-    - Social media links placed here to ensure the user does not navigate away from the page to soon.
-    - Creators information
+    - The website name
+    - Copyright simbol
+    - The creator name
+    - Social links to allow users to further connect and interact with the 'community' by following the social media accounts for the page.
 
 ---
 
