@@ -1,37 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="teal-text text-lighten-1 center-align">Edit Course!</h3>
+<h3 class="teal-text text-lighten-1 center-align">Edit Course!</h3>
 
-    <!--Form to add a new course (add_course)-->
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_course', course_id=course._id) }}">
+<!--Form to add a new course (add_course)-->
+<div class="row card-panel grey lighten-5">
+	<form class="col s12" method="POST" action="{{ url_for('edit_course', course_id=course._id) }}">
 
-            <!--Recipe name-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-utensils prefix teal-text text-lighten-1"></i>
-                    <input id="course_type" name="course_type" minlength="3" maxlength="20" 
-                        value="{{course.course_type}}" type="text" class="validate"
-                        required>
-                    <label for="course_type">Course name</label>
-                </div>
-            </div>
+		<!--Recipe name-->
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-utensils prefix teal-text text-lighten-1"></i>
+				<input id="course_type" name="course_type" minlength="3" maxlength="20" value="{{course.course_type}}"
+					type="text" class="validate" required>
+				<label for="course_type">Course name</label>
+			</div>
+		</div>
 
-            <!--Submit buttons-->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!--cancel btn--> 
-                    <a  href="{{ url_for('get_courses') }}" class="btn-large red darken-1 text-shadow hvr-glow">
-                        Cancel <i class="fas fa-plus-square right"></i>
-                    </a> 
-                    <!--add btn-->
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow hvr-glow" aria-label="edit course">
-                        Edit course <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
+		<!--Submit buttons-->
+		<div class="row">
+			<div class="col s12 center-align">
+				<!--cancel btn-->
+				<a href="{{ url_for('get_courses') }}" class="btn-large red darken-1 text-shadow hvr-glow">
+					Cancel <i class="fas fa-plus-square right"></i>
+				</a>
+				<!--add btn-->
+				<button type="submit" class="btn-large light-blue darken-1 text-shadow hvr-glow"
+					aria-label="edit course">
+					Edit course <i class="fas fa-plus-square right"></i>
+				</button>
+			</div>
+		</div>
+	</form>
+</div>
 
 {% endblock %}

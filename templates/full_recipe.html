@@ -56,7 +56,8 @@
                     <!--only allow to access these buttons to session user or admin-->
                     {% if session.user|lower == recipe.recipe_by|lower or session.user == "admin"  %}
                     <!--delete btn and confirmation modal-->
-                    <a href="#delete_modal" class="btn-floating halfway-fab waves-effect waves-light red left modal-trigger hvr-grow">
+                    <a href="#delete_modal"
+                        class="btn-floating halfway-fab waves-effect waves-light red left modal-trigger hvr-grow">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                     <!-- modal to delete recipe-->
@@ -66,18 +67,22 @@
                             <p>Once you have deleted the recipe, you cannot retrieve the recipe again</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red white-text hvr-grow modal-close waves-effect waves-green btn-flat">Delete Recipe</a>
-                            <a href="{{ url_for('get_recipes') }}" class="btn-small waves-effect right waves-light blue hvr-grow">Cancel</a>                  
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                class="btn-small red white-text hvr-grow modal-close waves-effect waves-green btn-flat">Delete
+                                Recipe</a>
+                            <a href="{{ url_for('get_recipes') }}"
+                                class="btn-small waves-effect right waves-light blue hvr-grow">Cancel</a>
                         </div>
                     </div>
                     <!--edit btn-->
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-floating halfway-fab waves-effect right waves-light green hvr-grow">
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                        class="btn-floating halfway-fab waves-effect right waves-light green hvr-grow">
                         <i class="fas fa-pen"></i>
                     </a>
                     {% endif %}
                 </div>
             </div>
-        
+
         </div>
     </div>
 </div>

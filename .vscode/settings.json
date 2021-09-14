@@ -22,5 +22,10 @@
    },
    "files.autoSave": "off",
    "workbench.colorTheme": "Gitpod Dark",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "editor.defaultFormatter": "HookyQR.beautify",
+   "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+   },
+   "editor.formatOnSave": true,
+   "diffEditor.ignoreTrimWhitespace": false
 }
