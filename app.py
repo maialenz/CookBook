@@ -1,9 +1,17 @@
+'''
+Python module to allow users authenticate and log into the personalized
+profile where they can access data stored in a db and manipulate it
+by accessing different pages.
+The users are allowed to perform CRUD operations.
+'''
 import os
+# import flask
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+# import authentication security
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -20,16 +28,27 @@ DB = mongo.db
 
 
 @app.route("/")
+# READ Recipe Function (C[R]UD)
 @app.route("/get_recipes")
 def get_recipes():
+    '''
+    Displays all users' inputs on a home page which is
+    available for logged and anonimus users
+    '''
     # checks for all recipes on db and stores them on a list
     recipes = list(mongo.db.recipes.find())
     # returns back all recipes on db
     return render_template("recipes.html", recipes=recipes)
 
 
+# READ Recipe and Courses Function (C[R]UD)
 @app.route("/search",  methods=["GET", "POST"])
 def search():
+    '''
+    Allow user to search the database using the index, so
+    they can find recipes faster using the below conditions.
+    If nothing was found, the user will get a message.
+    '''
     # Request query
     query = request.form.get("query")
     # Search index for recipe name, recipe description, course type
@@ -40,6 +59,7 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
+# CREATE User Function ([C]RUD)
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
@@ -68,11 +88,11 @@ def register():
             flash("The passwords do not match. Please try again")
             return redirect(url_for("register"))
 
-        register = {
+        new_user = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(password)
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(new_user)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -83,6 +103,7 @@ def register():
     # return render_template(url_for("profile", username=session["username"]))
 
 
+# READ User Function (C[R]UD)
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
@@ -97,6 +118,7 @@ def login():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # if username matches db
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
@@ -106,16 +128,18 @@ def login():
                     request.form.get("username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
-
+            # if password does not match
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
+        # username doesn't match db
         else:
-            # if username doesn't exist
             session['user'] = True
+            # feedback message to users
             flash("Incorrect Username and/or Password")
+            # returns the same page the user to try again
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -152,6 +176,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# CREATE Recipe Function ([C]RUD)
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     '''
@@ -209,6 +234,7 @@ def add_recipe():
     return render_template("add_recipe.html", courses=courses)
 
 
+# UPDATE Recipe Function (CR[U]D)
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     '''
@@ -268,6 +294,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe, courses=courses)
 
 
+# DELETE Recipe Function (CRU[D])
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     '''
@@ -289,6 +316,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# READ Course Function (C[R]UD)
 @app.route("/get_courses")
 def get_courses():
     '''
@@ -309,6 +337,7 @@ def get_courses():
     return render_template("courses.html", courses=courses)
 
 
+# CREATE Course Function ([C]RUD)
 @app.route("/add_course", methods=["GET", "POST"])
 def add_course():
     '''
@@ -338,6 +367,7 @@ def add_course():
     return render_template("add_course.html")
 
 
+# UPDATE Course Function (CR[U]D)
 @app.route("/edit_course/<course_id>", methods=["GET", "POST"])
 def edit_course(course_id):
     '''
@@ -370,6 +400,7 @@ def edit_course(course_id):
     return render_template("edit_course.html", course=course)
 
 
+# DELETE Recipe Function (CRU[D])
 @app.route("/delete_course/<course_id>")
 def delete_course(course_id):
     '''
@@ -391,15 +422,16 @@ def delete_course(course_id):
     return redirect(url_for('get_courses'))
 
 
+# READ Recipe Function (C[R]UD)
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     '''
     Allow all users to see all the db fields. When the user clicks on one
     recipe, it calls the db and finds the recipe by its id
     '''
-    full_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    full_view = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # returns all fields from a recipe id and displays on a page
-    return render_template("full_recipe.html", recipe=full_recipe)
+    return render_template("full_recipe.html", recipe=full_view)
 
 
 @app.errorhandler(404)
@@ -407,7 +439,7 @@ def handle_404(e):
     '''
     If a 404 error happens, the user is redirected to 404.html page.
     '''
-    return render_template('404.html')
+    return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
@@ -415,7 +447,7 @@ def server_error(e):
     """
     If a 500 error occurs, the user is directed to 500.html page.
     """
-    return render_template('500.html')
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
