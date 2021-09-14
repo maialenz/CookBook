@@ -1,4 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--Display 404.html page if a 404 error occurs or if an unauthorized user tries
+to gain access to restricted pages-->
+    <div class="row error center-align">
+        <div class="col s10 offset-s1">
+            <div class="card-panel teal accent-1">
+                <div class="card-content">
+                    <h1 class="center-align"> Oops! </h1>
+                    <h5>We can't seem to find the page you're looking for</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+            <p class="center-align">
+                Still not part of the family? <br>
+                <a href="{{ url_for('register') }}" class="black-text teal lighten-3 btn-large white hvr-grow">Log In Here!</a>
+            </p>
+        </div>
+
+        <div class="col s6">
+            <p class="center-align">
+                Already a member? <br>
+                <a href="{{ url_for('login') }}" class="black-text teal lighten-3 btn-large white hvr-grow">Log In Here!</a>
+            </p>
+        </div>
+    </div>
+
 {% endblock %}
