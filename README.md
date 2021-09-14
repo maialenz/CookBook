@@ -220,18 +220,19 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 
 ## DESIGN
 
-The design of the website was created to be as simple but pretty as posible, not to distract the user with too many color schemes and trying to bring the focus to the picture of the recipes.
+The design of the website was created to be as simple but pretty as posible, not to distract the user with too many color schemes and trying to bring the focus to the picture of the recipes to tempt the user to return and become members.
 
 ### **Colors**
 
 The colors used in this project are very simple, to keep a minimalistic and tidy website, as well as keeping the color contrasts the highests posible to facilitate the screen readers and make this site accessible to all.
 
-The colors chosen are combinations of: bright orange with dark typography, white and shades of grey. The color were found using [Coolors](https://coolors.co/).
+The colors chosen are combinations of: teal with white text, blue for add course button, orange to log out, red for delete and green for edit. This colors where taken from the [Materialize](https://materializecss.com/color.html) css section. 
 
-Some of the colors used in this project are: [....................this to be changed.................]
-- rgb(87, 15, 55): this color was used as the main color, but I've added opacity to make different shades of it.
-- rgba(173, 169, 183, 0.7): used as a background color.
-- #fff: used as button background color.
+- #26a69a: for navbar, course card background, headers and most home page buttons to keep a balance between the images and the rest of the buttons.
+- #f44336: for delete buttons
+- #4caf50: for edit buttons
+- #03a9f4: to add card button, add recipe submit button, edit recipe button, cancel button on modal.
+- #ff9800: for logout button on profile page.
 
 ---
 
@@ -248,17 +249,18 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### **Imagery**
 
-- As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL to add the respective image to the top of the recipe. This image can be used as a guide of the end product of that certain recipe.. 
+- As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL to add the respective image to the top of the recipe. This image can be used as a guide of the end product of that certain recipe.
 
-- As the background image would slow down the website loading time, I decided to use a solid light background color. This way, the user doesn't get distracted by the big background image, and the recipe images are more visible. (---------------------------------------------could change--------------------------------------------)
+- Although in the beginning a background was added, it made the important information lose importance, so it was decided to keep just the recipe images as the focus of data.
 
 ---
 
 ### **Logo**
 
 - The favicon was created using [Favicon.io](https://favicon.io/favicon-converter/) and the logo used to create it was created using an online application called [Canva](https://www.canva.com/). It represents cooking tools nodding the  main subject of the website. The use of the favicon makes it easier to recognize the application tab in between others that the user might have had already opened.
+( This logo was not used in the final draft)
 
-- As a logo, I used the Name of the website, as the words already explain what the website is about.
+- As a logo, I used the Name of the website, as the words already explain what the website is about. The typography used was imported from google fonts called 'Love Ya Like a sister'.
 
 ---
 
