@@ -18,7 +18,6 @@ The website will be responsive and accessible on all devices, but it's optimized
 1. [UX](#ux)
 
 - [User Stories](#user-stories)
-- [Game goals](#game-goals)
 - [User Centered Design](#user-centered-design)
   - [Strategy plane](#strategy-plane)
     - [User needs](#user-needs)
@@ -36,9 +35,9 @@ The website will be responsive and accessible on all devices, but it's optimized
 
 3. [DATABASE MODEL](#database-model)
 
-- [Users Data](#users-data)
-- [Recipes Data](#recipes-data)
-- [Courses Data](#courses-data)
+- Users Data
+- Recipes Data
+- Courses Data
 
 4. [FEATURES](#features)
 
@@ -411,12 +410,14 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - The option for the user to upload their own images: as it was adviced by student care, this functionality was left out, but would be implemented further down the course, as it will be taught in future lessons.
 - Give the option to download all created recipes to create a personalized cookBook and be able to make profit from this
 -  Active page class to let the user know which page they are currently on: Although this was an easy input before using flask, I have found this a challenging step to add to this project. As I have been short with times, I have decided to leave this feature for later realeases when I have some extra time to expand the MVP.
+- Pagination: to organize many recipes pages, to avoid the user endless scrolling.
 - The option for users to personalize their profile with images and custom recipes.
 - The option for users to delete their account from the database.
 - The option to have a few super access users, like more than one admin.
 - A section for users to add comments and option to share their recipes with others via email, whatsapp, facebook...
 - A contact form option users to request course types or modifications...
 - The option to allow admin users to block or remove users
+- In concern to the database, a future release would have a list of ingredients stored on it, so even if the UI changes the backend wouldn't change. This will be inplemented on a feature release as I ran out of time to implement this fix to the backend of the project.
 
 ---
 
@@ -605,7 +606,7 @@ It is posible to copy and edit this project by any user without changing the rep
 
 4. To share the changes/edits you have made to improve the original project with the owner, you can submit a pull request. Find the details to do so following this [link](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 
-#### Forking the GitHub Repository
+#### Making a local clone
 
 1. Log in to [GitHub](https://github.com/join/get-started) and locate the [GitHub repository](https://github.com/maialenz/cookbook)
 
@@ -657,3 +658,17 @@ $ python3 app.py
 ![screenshot of opening gitwork workspace](docs/deployment/gitpod-workspace-open.png)
 
 ---
+
+## CREDITS
+
+---
+
+## REFERENCES
+
+---
+
+## ACKNOWLEDGEMENTS
+
+---
+
+Project created by **Maialen Zumeta** | Ireland, September 2021
