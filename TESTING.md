@@ -70,14 +70,33 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
 
 - be able to manage my own posts by editing and/or deleting them
     - registered and logged users are able to manage only the recipes they have created from various places.
+    ![screenshot of butns in hompage](docs/testing/user-stories/homepage-edit-delete.png)
+    ![screenshot of full recipe edit and home page edit](docs/testing/user-stories/btns-full-view.png)
 
+    - If the user tries to delete a recipe they created, a modal will be triggered to check if they want to continue with their operation. In the same modal the user is given the option to edit or cancel instead of deleting the recipe.
+    ![screenshot of modal](docs/testing/user-stories/delete-modal.png)
     - Only session users can edit their own recipes. Not available on others recipe (see red box)
     ![screenshot of edit/delete buttons](docs/testing/user-stories/only-session-user.png)
 - be able to create my own recipes and post them for everyone to see them
+    - uppon loggin, the user is redirected to the users profile where they can add a recipe from a call to action button located on it, or from the main page where the user has the add recipe button on the top and in the navigation links
+    ![screenshot of profile add](docs/testing/user-stories/profile-add.png)
+    ![screenshot of main page add](docs/testing/user-stories/add-homepage.png)
 - not to be allowed to remove any other posts except mine
+    - in the same way as the visible button for only authorized and logged users, the user can only see the delete button on the recipes that the session user has created. This targets the recipe_by key value. Only username and recipe by matching recipes are available to see to the user. 
+    ![screenshot of authorized recipes](docs/testing/user-stories/only-session-user.png)
+
 - not to lose any recipes because others have removed it
+    - As the option before, other users don't have the option to see my recipes either.
 
  #### As the admin I want to:
-  - be able to delete any users recipes 
-  - be able to edit any users recipes
-  - have unique access to all features 
+
+- be able to delete any users recipes:
+    - the admin user has the option to delete all users recipes
+    ![screenshot admin delete](docs/testing/user-stories/admin-access.png)
+- be able to edit any users recipes
+    - the admin user has the option to edit all users recipes
+    ![screenshot admin delete](docs/testing/user-stories/admin-access.png)
+- have unique access to all features 
+    - the admin user has access to all funtionality. Admin can delete, edit any course created by any registered user. Furthermore, the user has unique tab for managing categories that are displayed for all user at the time of creating a recipe. This option allows admin user to add, edit and remove course types.
+    ![screenshot admin access](docs/testing/user-stories/courses-admin.png)
+    ![screenshot admin new course](docs/testing/user-stories/new-course-admin.png)
