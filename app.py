@@ -79,12 +79,12 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        elif len(username) < 5:
+        if len(username) < 5:
             flash("Username must contain at least 5 characters")
             return redirect(url_for("register"))
-        elif len(password) < 5:
+        if len(password) < 5:
             flash("Password must contain more than 5 characters")
-        elif password != confirmed_password:
+        if password != confirmed_password:
             flash("The passwords do not match. Please try again")
             return redirect(url_for("register"))
 
@@ -189,7 +189,6 @@ def add_recipe():
     # if the user is not logged in and tries to see pages only visible
     # to authorized users, block it and redirect them to 404 page
     if 'user' not in session:
-        flash('You have to be logged in to see this page')
         return render_template('404.html')
 
     # Allow user to insert data into db
@@ -249,10 +248,14 @@ def edit_recipe(recipe_id):
 
     # if the user is not logged in and tries to see pages only visible
     # to authorized users, block it and redirect them to 404 page
-    if 'user' not in session:
-        flash('You have to be logged in to see this page')
+    if 'user' not in session or (
+         recipe and (
+            recipe['recipe_by'] != session['user'] and
+            session['user'] != 'admin')):
         return render_template('404.html')
 
+    if not recipe:
+        return render_template('404.html')
     # Allow logged users to edit the data on db
     if request.method == "POST":
         vegetarian = "on" if request.form.get("vegetarian") else "off"
@@ -306,8 +309,9 @@ def delete_recipe(recipe_id):
     # if the user is not logged in and tries to see pages only visible
     # to authorized users, block it and redirect them to 404 page
     if 'user' not in session or (
-         recipe and recipe['recipe_by'] != session['user']):
-        flash('You have to be logged in to see this page')
+         recipe and (
+            recipe['recipe_by'] != session['user'] and
+            session['user'] != 'admin')):
         return render_template('404.html')
 
     # removes a recipe by it's id key
@@ -331,9 +335,10 @@ def get_courses():
 
     # block and redirect non logged/anonimus users
     if 'user' not in session:
-        # feedback message containing error to user
-        flash('You have to be logged in to see this page')
         # redirect to error page
+        return render_template('404.html')
+
+    if not courses:
         return render_template('404.html')
     # returns course page with data from all courses
     return render_template("courses.html", courses=courses)
@@ -349,8 +354,6 @@ def add_course():
     '''
     # block anonimus/non logged users
     if 'user' not in session:
-        # feedback message of error
-        flash('You have to be logged in to see this page')
         # redirect user to error page
         return render_template('404.html')
 
@@ -383,8 +386,8 @@ def edit_course(course_id):
     course = mongo.db.courses.find_one({"_id": ObjectId(course_id)})
 
     # block anonimus/non logged users
-    if 'user' not in session:
-        flash('You have to be logged in to see this page')
+    if 'user' not in session or (
+         not course and 'user' != 'admin'):
         return render_template('404.html')
 
     # on submit, update data from db with new one
@@ -410,10 +413,12 @@ def delete_course(course_id):
     If an anonimus user tries delete data or access already deleted data
     without being logged, it will be redirected to a 404 page.
     '''
+    course = mongo.db.courses.find_one({"_id": ObjectId(course_id)})
+
     # if the user is not logged in and tries to see pages only visible
     # to authorized users, block it and redirect them to 404 page
-    if 'user' not in session:
-        flash('You have to be logged in to see this page')
+    if 'user' not in session or (
+         not course and 'user' != 'admin'):
         return render_template('404.html')
 
     # call db and remove data by its id
@@ -432,12 +437,15 @@ def full_recipe(recipe_id):
     recipe, it calls the db and finds the recipe by its id
     '''
     full_view = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if not full_view:
+        return render_template('404.html')
+
     # returns all fields from a recipe id and displays on a page
     return render_template("full_recipe.html", recipe=full_view)
 
 
 @app.errorhandler(404)
-def handle_404(e):
+def handle_404(app_error):
     '''
     If a 404 error happens, the user is redirected to 404.html page.
     '''
@@ -445,7 +453,7 @@ def handle_404(e):
 
 
 @app.errorhandler(500)
-def server_error(e):
+def server_error(app_error):
     """
     If a 500 error occurs, the user is directed to 500.html page.
     """
