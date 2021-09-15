@@ -519,3 +519,135 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - [Jpg2pdf](https://jpg2pdf.com/)
   - used to combine images into a single file
+
+---
+
+## TESTING 
+
+Find the Testing document [here](TESTING.md)
+
+---
+
+## DEPLOYMENT
+
+### Version Control
+  -This project was developed using the code editor [GitPod](https://www.gitpod.io/) and pushed to the remote repository hosted on [GitHub](https://github.com/).
+
+  - As in this project the focus was on data, I decided to build all on the main branch. I commited every time a feature was created.
+
+### Heroku
+
+This project is live and automatically deployed on [Heroku](https://id.heroku.com/login)
+In order to successfully deploy the application that uses Python and MongoDB, the followin steps were taken: 
+
+  1. Create and open a GitPod workspace
+
+  2. Ensure that the project dependencies and requirements are set up. This can be done introducing the `pip3 freeze --local > requirements.txt` on the terminal. This will create a file called `requirements.txt` where all the installed packages will be stored.
+
+  3. Once the `requirements.txt` file is created, a file called Procfile must be added too. Heroku needs this app to execute and run the app. To create the Procfile file type `echo web: python app.py > Procfile`. Open this file and remove the last blank line. This might cause issues with deployment.
+
+  4. Create another file called `env.py` to store the following variables:
+  - IP 
+  - PORT 
+  - MONGO_URI 
+  - SECRET_KEY 
+  - MONGO_DBNAME 
+  
+  5. Commit and Push these new files to the GitHub repository.
+
+  6. Visit Heroku and create/log in your account.
+
+  7.  Under the profile picture, Select 'New App':
+  ![Screenshot of the New App option on Heroku](docs/deployment/newapp.png)
+
+  8. Input a project name (it has to be unique), select the region closes to you, and click on Create app.
+  ![Create new app form on Heroku](docs/deployment/newapp-form.png)
+
+  9. This will redirect you to the deploy screen. You have the options to deploy connecting Heroku via the CLI (follow the instructions provided) or connect through the GitHub account. This is the way we deployed:
+  ![Screenshot of deployment method options](docs/deployment/deploy-options.png) 
+
+  10. Make sure the GitHub account is displayed and search for the repository to be connected to Heroku.
+  ![Screenshot of repository seach in Heroku](docs/deployment/search-repo.png)
+
+  11. Click on the settings tab and go to the `Config Vars` section. Click on `Reveal Config Vars`. This will show the input fields needed to be filled with the key pair values we previously added to the env.py file. Add them making sure not to add any quotes on any of the fields. (secret key and password values have been covered on the image below)
+  ![Screenshot of Config Vars in Heroku](docs/deployment/config-vars.png)
+
+  12. Return to the Deploy tab and inside the 'Automatic deploys' section select 'Enable Automatic Deploys' to the master branch.
+  ![Screenshot of automatic deploys on Heroku](docs/deployment/deploys.png)
+
+  13. Heroku will start building the app. When finished and if successful a message and a `view` button will appear. 
+  ![screenshot of successful deployment](docs/deployment/success.png)
+
+  14. Now all the commits pushed to GitHub will automatically be deployed to Heroku!
+
+---
+
+### GitHub
+
+#### Forking the GitHub Repository
+
+It is posible to copy and edit this project by any user without changing the repository on the original GitHub account. This can be done by forking the repository by following the following steps (Forking will only make a copy of the original project, so any changes won't affect the original):
+
+1. Log in to [GitHub](https://github.com/join/get-started) and locate the [GitHub repository](https://github.com/maialenz/cookbook)
+
+   - You can also find it by seaching maialenz/cookbook on the [GitHub](https://github.com/) seach-bar.
+
+2. Below the repository title at the top, above the "Settings" button on the horizontal menu and under the user's profile logo, locate the "Fork" button and click on it.
+![screenshot of the fork button](docs/deployment/forkbutton.png)
+
+3. You will have made a copy of the whole repository in your own GitHub account.
+
+4. To share the changes/edits you have made to improve the original project with the owner, you can submit a pull request. Find the details to do so following this [link](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+
+#### Forking the GitHub Repository
+
+1. Log in to [GitHub](https://github.com/join/get-started) and locate the [GitHub repository](https://github.com/maialenz/cookbook)
+
+  - You can also find it by seaching maialenz/cookbook on the [GitHub](https://github.com/) seach-bar.
+
+2. Above the repository files and to the left of the green "GitPod" button, locate the "Code" or "download" button and click on it.
+![screenshot of cloning code button](docs/deployment/clonecode.png)
+
+3. To clone the repository using HTTPS copy the link on display (you can click on the clipboard to copy it faster).
+![screenshot of the HTTPS clone link](docs/deployment/clonehttps.png)
+
+4. If you are working on a desktop application, follow the documentation found on number 5. For cloud based, open your own terminal in GitPod or your preferred IDE (we will be using Gitpod).
+
+  - For this project, we created a new workspace environment in GITPOD by using Code Institute's [Full Gitpod template](https://github.com/Code-Institute-Org/gitpod-full-template). To open it, just click on the Use this template button and all the necessary tools will be added to the work environment without the need of manually installing them. It takes a few minutes to load.
+  ![Screensot of the template button in GitHub](docs/deployment/gitpod-template-CI.png)
+
+5. If you use GitHub desktop follow the steps documented [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop).
+
+---
+
+#### Gitpod workspace after copying the HTTPS clone link
+
+1. Change the current working directory to the location where you want the cloned directory to be made.
+
+2. In the terminal type `git clone` and then paste the URL copied on step 3
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+3. Press Enter. This will create your local clone.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+4. To open a preview port within your own local workspace type within gitpod, enter the following command on the terminal:
+
+```
+$ python3 app.py
+```
+
+5. Once your Gitpod workspace is created, only open the workspace from Gitpod Workspaces itself (https://gitpod.io/workspaces/), and not from GitHub Gitpod button (Only use this button once at the very begining when creating a new workspace)
+![screenshot of opening gitwork workspace](docs/deployment/gitpod-workspace-open.png)
+
+---
