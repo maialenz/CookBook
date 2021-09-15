@@ -16,6 +16,9 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
 ## Table of Content
 
 1. [USER STORIES](#user-stories-testing)
+    - [Anonymous user](#anonimus-user)
+    - [Registered user](#registered-user)
+    - [Admin user](#admin-user)
 2. [VALIDATOR CHECKS](#validator)
    - [HTML](#html-validator)
      - Index.html
@@ -34,3 +37,47 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
 6. [BUGS](#bugs)
 7. [KNOWN BUGS](#known-bugs)
 8. [BACK TO README.md](README.md)
+
+## USER STORIES TESTING
+
+### **User stories**
+
+#### Anonymous user:
+
+- see all the recipes on the main page:
+    - When the user loads the page, it brings the to the page where all recipes are displayed. This is available to non registered or anonymous users.
+    ![screenshot of main page](docs/testing/user-stories/homepage.png)
+
+- to be able to find information effortessly:
+    - Any user has the option to search for specific recipes by name, by difficulty or course type
+    ![screenshot of search bar](docs/testing/user-stories/search.png)
+    ![screenshot of search words](docs/testing/user-stories/search-words.png)
+    
+    - There is a view full recipe button to open the recipe on a separate page where all the information is displayed
+    ![screenshot of full view](docs/testing/user-stories/full-recipe-btn.png)
+    ![screenshot of full view](docs/testing/user-stories/full-view.png)
+
+- not to be able to add any recipes without registered
+    - Users have a button on under the navbar which will redirect them to the login page.
+    ![screenshot of navbar anonymous user](docs/testing/user-stories/anonymous-navbar.png)
+    
+- Not to be able to edit/add/remove any recipes others have created
+    - users are not able to add, edit or delete any recipes without being logged in. No buttons are displayed unless a user is logged.  
+    - Anonymous users are not able to see any of the buttons available at the bottom of the recipe card.
+    ![screenshot of no buttons](docs/testing/user-stories/nobuttons.png)
+
+#### As a registered user I want to:
+
+- be able to manage my own posts by editing and/or deleting them
+    - registered and logged users are able to manage only the recipes they have created from various places.
+
+    - Only session users can edit their own recipes. Not available on others recipe (see red box)
+    ![screenshot of edit/delete buttons](docs/testing/user-stories/only-session-user.png)
+- be able to create my own recipes and post them for everyone to see them
+- not to be allowed to remove any other posts except mine
+- not to lose any recipes because others have removed it
+
+ #### As the admin I want to:
+  - be able to delete any users recipes 
+  - be able to edit any users recipes
+  - have unique access to all features 
