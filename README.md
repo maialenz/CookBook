@@ -347,7 +347,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - 500 page displays when there's a server error.
 - If a non authroized user tries to open a page that has not access too, they will be blocked and redirected to a 404 page denying the access.
 - Non authorized users will not be able to access already deleted recipes.
-
+- The logout link removes the session cookies of users.
 ---
 
 #### **Homepage (All recipe page) specific features:**  
@@ -414,5 +414,27 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - The option to have a few super access users, like more than one admin.
 - A section for users to add comments and option to share their recipes with others via email, whatsapp, facebook...
 - A contact form option users to request course types or modifications...
+- The option to allow admin users to block or remove users
 
+---
+
+## TECHNOLOGIES USED
+
+### **Syntax**
+
+-  [HTML5](https://en.wikipedia.org/wiki/HTML5):
+  - HTML5 is a markup language used for structuring and presenting content on the internet.
+
+- [CSS](https://en.wikipedia.org/wiki/CSS):
+  - Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML
+- Markdown (for README.md, REFERENCES.md and TESTING.md)
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript):
+  - Javascript is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well.
+
+- [JQuery](https://jquery.com/): 
+  - jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)):
+  - Python is an interpreted high-level general-purpose programming language.Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects
 ---
