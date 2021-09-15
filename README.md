@@ -228,7 +228,7 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 
 The design of the website was created to be as simple but pretty as posible, not to distract the user with too many color schemes and trying to bring the focus to the picture of the recipes to tempt the user to return and become members.
 
-### **Colors**
+### **Color scheme**
 
 The colors used in this project are very simple, to keep a minimalistic and tidy website, as well as keeping the color contrasts the highests posible to facilitate the screen readers and make this site accessible to all.
 
@@ -257,7 +257,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - As this project will be focused on the data rather than the frontend design of the website, the images will be included as an URL. The user will have to provide a URL to add the respective image to the top of the recipe. This image can be used as a guide of the end product of that certain recipe.
 
-- Although in the beginning a background was added, it made the important information lose importance, so it was decided to keep just the recipe images as the focus of data.
+- Although in the beginning a background image was added, it made the important information lose importance, so I decided to add a simple background displaying simple fast-food graphics that gives fun feeling to the user, but it does not take over the user's focus of the main information.
 
 ---
 
@@ -284,11 +284,11 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
   - Users data: All user registrations will be stored in this collection. The passwords are securely stored by using Pythons Wekzeug Security password hash. This generates a random character string which is converted into a unique, irreversible bit array. 
 
-        | Title              | Data Type     |
-        | ------------------ |:-------------:|
-        | _id                | ObjectId      |
-        | username           | string        |
-        | password           | string        |
+      | Users              | Data Type     |
+      | ------------------ |:-------------:|
+      | _id                | ObjectId      |
+      | username           | string        |
+      | password           | string        |
 
   - Recipes data: The website is based around this collection.
 
@@ -296,7 +296,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
     - Some fields from this collection are used to search the database by: name, course type, difficulty.
 
-      | Title              | Data Type     |
+      | Recipes            | Data Type     |
       | ------------------ |:-------------:|
       | _id                | ObjectId      |
       | course_type        | string        |
@@ -330,7 +330,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
     - It is also used to search for a course type
 
-      | Title              | Data Type     |
+      | Courses            | Data Type     |
       | ------------------ |:-------------:|
       | _id                | ObjectId      |
       | course_type        | string        |
@@ -471,6 +471,10 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - [Favicon](https://favicon.io/)
   - Used to generate the websites favicon logo of various sizes for different devices.
+
+- [Hero Patterns](http://www.heropatterns.com/)
+  - A collection of repeatable SVG background patterns for you to use on web projects.
+  - Used for the background pattern of this project.
 
 - [Am I Responsive](http://ami.responsivedesign.is/)
   - A tool to check how the website appears and the functionality on various devices. The mockups on this document was generated with this tool.
