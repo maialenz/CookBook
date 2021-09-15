@@ -9,6 +9,9 @@
 
 The main reason behind creating this test documentation is to reduce any bugs and errors left on the software, like not working links, responsive issues, font-sizes... and this way improve User Experience and increase traffic to the site.
 
+From the very beggining I used Google Chrome Dev Tools to style and fix the code on real time. This helped fix mistakes and errors on a timely manner as the tool helped to see responsive, styling and typo errors as I coded.
+
+Once finished, I tested my site on a two different phones, laptop, tablet and desktop as well as DevTools and different browsers manually.
 
 ## Table of Content
 
