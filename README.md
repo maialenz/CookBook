@@ -274,6 +274,8 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - This project have been made using MongoDB for since MongoDB allows a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like (BSON) documents with optional schemas.
 
+![database model and data architecture](docs/deployment/data-graphic.jpg)
+
 - The main schema used in this project is ObjectId.
   - The objectId gives each object a unique value that can be used as identifier.
   - the objectId is added to each item created inside a collection which can later be used to manipulate by searching the database by using the ObjectId.
