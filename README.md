@@ -34,16 +34,16 @@ The website will be responsive and accessible on all devices, but it's optimized
 - [Imagery](#imagery)
 - [Logo](#logo)
 
-3. [FEATURES](#features)
-
-- [Existing Features](#existing-features)
-- [Features left to implement](#features-left-to-implement)
-
-4. [DATABASE MODEL](#database-model)
+3. [DATABASE MODEL](#database-model)
 
 - [Users Data](#users-data)
 - [Recipes Data](#recipes-data)
 - [Courses Data](#courses-data)
+
+4. [FEATURES](#features)
+
+- [Existing Features](#existing-features)
+- [Features left to implement](#features-left-to-implement)
 
 5. [TECHNOLOGIES USED](#technologies-used)
 
@@ -272,19 +272,27 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### **Database Model**
 
-- This project uses MongoDB for all database aspects. MongoDB is a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like (BSON) documents with optional schemas.
+- This project have been made using MongoDB for since MongoDB allows a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like (BSON) documents with optional schemas.
 
 - The main schema used in this project is ObjectId.
+  - The objectId gives each object a unique value that can be used as identifier.
+  - the objectId is added to each item created inside a collection which can later be used to manipulate by searching the database by using the ObjectId.
 
-- Users data:
+- The three collections in this database are:
 
-      | Title              | Data Type     |
-      | ------------------ |:-------------:|
-      | _id                | ObjectId      |
-      | username           | string        |
-      | password           | string        |
+  - Users data: All user registrations will be stored in this collection. The passwords are securely stored by using Pythons Wekzeug Security password hash. This generates a random character string which is converted into a unique, irreversible bit array. 
 
-- Recipes data:
+        | Title              | Data Type     |
+        | ------------------ |:-------------:|
+        | _id                | ObjectId      |
+        | username           | string        |
+        | password           | string        |
+
+  - Recipes data: The website is based around this collection.
+
+    - Users can add a recipe that is added into the database which stores each users recipe. This recipe is connected to the user collection by the recipe_by and to the courses collection by the type of recipe
+
+    - Some fields from this collection are used to search the database by: name, course type, difficulty.
 
       | Title              | Data Type     |
       | ------------------ |:-------------:|
@@ -314,7 +322,11 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
       | vegetarian         | string        |
       | recipe_by          | string        |
 
-- Courses data:
+  - Courses data: This courses are available to the user as a selection dropdown when they add a new recipe. Only admin user is allowed to create a new database and add it into the collection. 
+
+    - The course type connects this collection with the recipes collection.
+
+    - It is also used to search for a course type
 
       | Title              | Data Type     |
       | ------------------ |:-------------:|
@@ -327,20 +339,68 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ### Existing Features
 
+- Responsive on all screen sizes
 - All buttons and links will be styled with hovering effects to invite the user to click on them.
-- The logo, seach bar and will stay static along the website to give the website consistency.
+- The logo on the navbar redirects the user to the home page.
+- User gets custom feedback on success or error operations 
+- 404 page display when the user tries to access an unauthorized page or there is an external error
+- 500 page displays when there's a server error.
+- If a non authroized user tries to open a page that has not access too, they will be blocked and redirected to a 404 page denying the access.
+- Non authorized users will not be able to access already deleted recipes.
 
-- **Homepage:** 
+---
 
- 
+#### **Homepage (All recipe page) specific features:**  
 
-- **Sign In:**
+- Displays all recipes to all users, regardless they are registered members or not
+- If the user is logged in, this page will display option to delete or edit the recipes the logged in user has created. 
+- A call to action button under each recipe card allowing to expand the whole recipe on a separate page. This is so the user can have a single recipe fully displayed while they are cooking, so it's easier to follow the instructions.
+- A search bar to narrow the search to find specific recipes, courses, difficulties. This is available to all users regardless their user status.
+- For logged users: the delete button will open a modal for the user to confirm or cancel the action. The edit button will open the specific clicked recipe on a page so the user can see the previous data and can edit it accordingly.
 
+---
 
-- **Log In:** 
+#### **Specific Register page Features:**
 
-  -
+- Specific error messages are diplayed if the user does not fill all the required input fields. To allow the users to use characters and numbers, a regex pattern attribute is used. This fields also contain max and min attributes to make sure the user enters specific amount of characters.
+- Input fields for users to create a username and password
+- Specific field to confirm the passwords match
+- A submit button to register the data on the database
+- A call to action button for users already registered redirecting them to the login page
 
+---
+
+#### **Specific Log In Page Features:** 
+
+- A personalized message to each user is displayed on log in
+- The user is given a fast and direct access to all recipes and addition of recipe. Admin user is given the option to add new catrds from its profile page.
+- A logout button is displayed at the botton for uses to logout without accessing the navigation links.
+- Uppon login, the user will be redirected to their profile page and will display a message as confirmation.
+
+---
+
+#### **Specific Add recipe Page Features:** 
+
+- The user is presented with a form separated in three parts: course type and difficulty, recipe information and cooking instructions and ingredients.
+- The user has to choose the course difficulty and course type from a dropdown menu. The course difficulty will include the option the admin has created. 
+- Two collpasible bars to input the ingredients and the steps required for the recipe. This was done so the form is more condense, instead of the user needing to scroll, and only opening them when the user reaches this section.
+- A switch so the user can select if the recipe is vegetarian or not. This will display a little green carrot under the recipe card title so it's visually recognizeable for those users looking for a vegetarian recipe.
+- Thow buttons alowing the user to add the recipe or cancel the operation. 
+
+---
+
+#### **Specific Add course Page Features:** 
+
+- Only accessible for the admin user
+- The add recipe button redirects the admin user to the page where all courses are displayed. Here the admin has the option to edit, add more, or delete the courses.
+- Upon clicking the delete button, admin user will be prompted to confirm or cancel the operation.
+
+---
+
+#### **Specific Admin user Features:** 
+
+- Admin user has access to all pages
+- Admin has the option to remove or edit any users recipes.
 
 ---
 
@@ -349,5 +409,10 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - The option for the user to upload their own images: as it was adviced by student care, this functionality was left out, but would be implemented further down the course, as it will be taught in future lessons.
 - Give the option to download all created recipes to create a personalized cookBook and be able to make profit from this
 -  Active page class to let the user know which page they are currently on: Although this was an easy input before using flask, I have found this a challenging step to add to this project. As I have been short with times, I have decided to leave this feature for later realeases when I have some extra time to expand the MVP.
+- The option for users to personalize their profile with images and custom recipes.
+- The option for users to delete their account from the database.
+- The option to have a few super access users, like more than one admin.
+- A section for users to add comments and option to share their recipes with others via email, whatsapp, facebook...
+- A contact form option users to request course types or modifications...
 
 ---
