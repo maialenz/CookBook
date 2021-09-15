@@ -437,4 +437,85 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)):
   - Python is an interpreted high-level general-purpose programming language.Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects
+
 ---
+
+### Frameworks, Libraries & Programs
+
+- [Balsamiq](https://balsamiq.com/) 
+  - Used to create wireframes for each website page on various devices and screen sizes.
+
+- [Font Awesome](https://fontawesome.com/)
+  - used to include inline icons as representation and support of information
+
+- [Materialize](https://materializecss.com/) with [JQuery](https://jquery.com/)
+  - was used for responsiveness using the grid system
+  - jQuery was used alongside the Materialize library to initialize used components.
+
+- [Google Fonts](https://fonts.google.com/)
+  - Used to import the three fonts used throughout the site 'Quicksand', 'Montserrat Alternates' and 'Love Ya Like A Sister'.
+
+- [Hover.css](https://ianlunn.github.io/Hover/)
+  - A library with ready to use hover effects. It was used for most links and buttons. The effect used was hover grow.
+
+- [GitHub](https://github.com/)
+  - Used to host the entire repository for the project.
+
+- [GitPod](https://www.gitpod.io/)
+  - The code editor used to build the entire project.
+
+- [TinyPNG](https://tinypng.com/)
+  - Used this to compress the image used on the website to decrease the file size. (Images were not included on the end draft)
+
+- [Favicon](https://favicon.io/)
+  - Used to generate the websites favicon logo of various sizes for different devices.
+
+- [Am I Responsive](http://ami.responsivedesign.is/)
+  - A tool to check how the website appears and the functionality on various devices. The mockups on this document was generated with this tool.
+
+- [Responsinator](http://www.responsinator.com/)
+  - Similar to [Am I responsive](http://ami.responsivedesign.is/) this is a web based application that allows a website to be checked an a large amount of devices in portrait and landscape view.
+
+- [W3C Validator HTML](https://validator.w3.org/) & [W3C Validator CSS](https://jigsaw.w3.org/css-validator/)
+  - Both of these were used to test all the code for the project whilst working and for the finished website to check for valid HTML and CSS.
+
+- [JSHint](https://jshint.com/)
+  - This is a tool used to detect errors or potential problems within Javascript code, used to test and validate all Javascript written for this project.
+
+- [Pylint](https://www.pylint.org/)
+  - Pylint is a source-code, bug and quality checker for the Python programming language.
+
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+  - Jinja is a web template engine for the Python programming language. It allows writing code similar to Python syntax. Then the template is passed data to render the final document.
+  - Jinja templating is built into the [Flask](https://flask.palletsprojects.com/en/2.0.x/) library.
+
+- [PyMongo](ttps://pymongo.readthedocs.io/en/stable/]
+  - PyMongo is the official MongoDB Python driver for MongoDB.
+
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+  - Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries.
+  - Flask requires the [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) template to work
+
+- [Flask PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+
+- [Heroku](https://id.heroku.com/login)
+  - Heroku is a cloud platform as a service (PaaS) supporting several programming languages.
+  - The Heroku network runs the customer's apps in virtual containers which execute on a reliable runtime environment.
+
+- [BrowserStack](https://www.browserstack.com/)
+  - This application was used to test the functionality and appearance of the project on all main browsers.
+
+- [w3schools](https://www.w3schools.com/)
+  - used to refresh the lessons learned in the course in a summed up way
+
+- [Stack overflow](https://stackoverflow.com/)
+  -to check questions to find solutions to problems and bugs I encounter during the creation of the website
+
+- [CSS Autoprefixer](https://autoprefixer.github.io/)
+  - used to add vendor prefixes to the CSS used in the project to increase cross browser compatibility.
+
+- [Media Genesis](https://responsivedesignchecker.com/)
+  - used to check responsiveness on different device and viewports
+
+- [Jpg2pdf](https://jpg2pdf.com/)
+  - used to combine images into a single file
