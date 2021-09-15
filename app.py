@@ -302,9 +302,11 @@ def delete_recipe(recipe_id):
     If an anonimus user tries delete data or access already deleted data
     without being logged, it will be redirected to a 404 page.
     '''
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # if the user is not logged in and tries to see pages only visible
     # to authorized users, block it and redirect them to 404 page
-    if 'user' not in session:
+    if 'user' not in session or (
+         recipe and recipe['recipe_by'] != session['user']):
         flash('You have to be logged in to see this page')
         return render_template('404.html')
 
