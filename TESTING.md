@@ -116,19 +116,22 @@ As a css validator, I also used w3 Validator to make sure it checked my style.cs
 - As to develop this project with the [Jinja Templating Engine](https://jinja.palletsprojects.com/en/3.0.x/), the validator would count all url_for() as errors. So I had to validate the code introducing the URL on the [W3 Validator](https://validator.w3.org/) to check the whole website.
 
 - Although the validator gave a warning because a section did not have a header, the reason for this is that this section only shows if there is a message to give feedback to the user. So no header is needed in this case.
-[HTML Validator result](docs/testing/validator/html-validator.png)
+
+- See [HTML Validator results here](docs/testing/validator/html-validator.png)
 
 ---
 
 ### CSS Validator
 - The [jigsaw validator](https://jigsaw.w3.org/css-validator) did not find any errors.
-[css validator result](docs/testing/validator/css-validator.png)
+
+- See [css validator results here](docs/testing/validator/css-validator.png)
 
 ---
 
 ### JSHint Validator
 - [JSHint](https://jshint.com/) did not find any warning or errors.
-[JSHint validator result](docs/testing/validator/jshint-validator.png)
+
+- See [JSHint validator results here](docs/testing/validator/jshint-validator.png)
 
 ---
 
@@ -136,7 +139,8 @@ As a css validator, I also used w3 Validator to make sure it checked my style.cs
 - After running pylint app.py on the terminal, I got a few warnings:
     - e argument does not user snake_case. I changed this for app_error. This still gives a warning sayin Unused argument. But if this argument is removed from hadle_404(app_error) and server_error(500), the 404.html and 500.html do not render. So it was decided to leave the arguments on plave.
 - Unnecessary 'else' after 'return' and unnecessary 'elif' after'return': although I changed the elif statements at (/register) for if statements, I decided to leave the else statement in place on line 124 as changing this for another if statement makes the code a little confusing to understand. 
-[Pylint validations result](docs/testing/validator/pylint-validator.png)
+
+- See [Pylint validations results here](docs/testing/validator/pylint-validator.png)
 
 ---
 
@@ -150,7 +154,7 @@ Due to the simplicity of the website, the results of the lighthouse testing have
 
 The only major thing to be fixed to improve accessibility was the missing attributes aria-label and alt for images. This was fixed immediately, improving considerably the accessibility scores.
 
-### Mobile
+### Mobile:
 
 - [Home mobile Anonimus User:](docs/testing/lighthouse/Mobile-homepage.png)
 In the home page the performance was lower than the rest because the loading time of the images.
@@ -173,7 +177,7 @@ In the home page the performance was lower than the rest because the loading tim
 
 - [Edit course](docs/testing/lighthouse/edit-course-mobile.png)
 
-### Desktop
+### Desktop:
 
 - [Home mobile Anonymous User:](docs/testing/lighthouse/desktop-anonymous-home.png)
 
@@ -194,3 +198,39 @@ In the home page the performance was lower than the rest because the loading tim
 - [Add course](docs/testing/lighthouse/desktop-add-course.png)
 
 - [Edit course](docs/testing/lighthouse/desktop-edit-course.png)
+
+## DEVICE RESPONSIVENESS
+
+I continuously tested the project on various devices from the very beginning. I mostly used Google Chrome DevTools, but as soon as I deployed the website to Heroku, I pushed my code very often to see the results of the changes in real time on my own personal devices (Samsung S8+, HP Envy 13", Samsung 5Se Tablet and Desktop and HP desktop 31.5" screen) and make sure the site was responsive on various viewports. Below are the pictures of the homepage of these viewports as a way a user would see them when arriving at the website:
+
+- Samsung Galaxy S8+: 
+
+![screenshot of samsung s8+](docs/testing/device-responsiveness/galaxys8+.jpeg)
+
+- Samsung A70: 
+
+![screenshot of samsung A70](docs/testing/device-responsiveness/A70.jpeg)
+
+- Samsung Galaxy Tab5e:
+
+![screenshot of samsung Tab](docs/testing/device-responsiveness/Tab5e.jpeg)
+
+- Hp Envy 13":
+
+![screenshot of samsung Envy](docs/testing/device-responsiveness/Envy13.jpeg)
+
+- PC HP 31.5":
+
+![screenshot of HP 31.5"](docs/testing/device-responsiveness/.jpeg)
+
+Apart from that, I used an online app by [Media Genesis](https://responsivedesignchecker.com) as well as Google Chrome Developer tools to manually check responsiveness on those screens I did not have access to.IThe results helped improve the UI on very small viewports like the front screen on the samsung galaxy fold or the iPhone 5, where the viewports are 238px and 320px respectively wide. See bugs to see the fixes. 
+
+
+
+
+
+
+
+## Bugs
+
+ The biggest problem found when carrying this test was that the message box was too short, so I changed the column size on the base.html from s6 to s10. The same way, the welcome card on the profile, the h4 font size was too large, so I added it to a media query for small screen sizes.
