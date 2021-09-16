@@ -247,7 +247,10 @@ All the screenshots to my manual tests on various major devices are below:
     - [Samsung S8+ screenshot edit recipe](docs/testing/browser-tests/samsungs8+-edit.jpeg)
     - [Samsung S8+ screenshot delete recipe](docs/testing/browser-tests/samsungs8+-delete.jpeg)
     - [Samsung S8+ screenshot full recipe](docs/testing/browser-tests/samsungs8+-full.jpeg)
-     - [Samsung S8+ screenshot full recipe bottom](docs/testing/browser-tests/samsungs8+-full-recipe-bottom.jpeg)
+    - [Samsung S8+ screenshot add course](docs/testing/browser-tests/samsungs8+-add-course.jpeg)
+    - [Samsung S8+ screenshot edit course](docs/testing/browser-tests/samsungs8+-edit-course.jpeg)
+    - [Samsung S8+ screenshot courses](docs/testing/browser-tests/samsungs8+-courses.jpeg)
+    - [Samsung S8+ screenshot full recipe bottom](docs/testing/browser-tests/samsungs8+-full-recipe-bottom.jpeg): The user here has the authorization to see the delete/edit options because the user is the creator of the recipe
 
 
 - Samsung A70 (mobile device): I also tested the website on another mobile device:
@@ -266,78 +269,30 @@ All the screenshots to my manual tests on various major devices are below:
     - [Samsung A70 screenshot edit recipe](docs/testing/browser-tests/A70-edit.jpeg)
     - [Samsung A70 screenshot delete recipe](docs/testing/browser-tests/A70-delete.jpeg)
     - [Samsung A70 screenshot full recipe](docs/testing/browser-tests/A70-full.jpeg)
-     - [Samsung A70 screenshot full recipe bottom](docs/testing/browser-tests/A70-full-recipe-bottom.jpeg)
+     - [Samsung A70 screenshot full recipe bottom](docs/testing/browser-tests/A70-full-recipe-bottom.jpeg): The user here does not have the authorization to see the delete/edit options because it's not the creator of the recipe
 
 
 - Samsung S5e (tablet)
 
-  - [Galaxy Tab S5e Index](docs/testing/device+browser-tests/Galaxy-Tab-S5e-index.jpg)
-  - [Galaxy Tab S5e game](docs/testing/device+browser-tests/Galaxy-Tab-S5e-game.jpg)
-  - [Galaxy Tab S5e highscore](docs/testing/device+browser-tests/Galaxy-Tab-S5e-highscore.jpg)
-  - [Galaxy Tab S5e end](docs/testing/device+browser-tests/Galaxy-Tab-S5e-end.jpg)
-  - [Galaxy Tab S5e modal](docs/testing/device+browser-tests/Galaxy-Tab-S5e-modal.jpg)
+    - [Galaxy Tab S5e home](docs/testing/browser-tests/5se-home.jpg)
+    - [Galaxy Tab S5e full recipe](docs/testing/browser-tests/5se-full-recipe.jpg)
+    - [Galaxy Tab S5e full recipe bottom](docs/testing/browser-tests/5se-full-recipe-bottom.jpg)
+    - [Galaxy Tab S5e navbar](docs/testing/browser-tests/5se-navbar.jpg)
+    - [Galaxy Tab S5e login](docs/testing/browser-tests/5se-login.jpg)
+    - [Galaxy Tab S5e register](docs/testing/browser-tests/5se-register.jpg)
+    - [Galaxy Tab S5e profile](docs/testing/browser-tests/5se-profile.jpg)
+    - [Galaxy Tab S5e profile bottom](docs/testing/browser-tests/5se-profile-bottom.jpg)
+    - [Galaxy Tab S5e edit delete option for logged user only](docs/testing/browser-tests/5se-options.jpg)
+    - [Galaxy Tab S5e add recipe](docs/testing/browser-tests/5se-add.jpg)
+    - [Galaxy Tab S5e add recipe bottom](docs/testing/browser-tests/5se-add-bottom.jpg)
+    - [Galaxy Tab S5e edit recipe](docs/testing/browser-tests/5se-edit.jpg)
+    - [Galaxy Tab S5e delete recipe](docs/testing/browser-tests/5se-delete.jpg)
+    - [Galaxy Tab S5e full recipe](docs/testing/browser-tests/5se-full.jpg)
+    - [Galaxy Tab S5e add course](docs/testing/browser-tests/5se-new-course.jpg)
+    - [Galaxy Tab S5e edit course](docs/testing/browser-tests/5se-edit-course.jpg)
+    - [Galaxy Tab S5e courses](docs/testing/browser-tests/5se-courses.jpg)
+    - [Galaxy Tab S5e full recipe bottom](docs/testing/browser-tests/5se-full-recipe-bottom.jpg)
 
-- HP Envy 13" (laptop)
-
-    - Google Chrome (browser)
-
-        - [HP Envy index screenshot](docs/testing/device+browser-tests/HP-envy-index.png)
-        - [HP Envy game screenshot](docs/testing/device+browser-tests/HP-envy-game.png)
-        - [HP Envy highscores screenshot](docs/testing/device+browser-tests/HP-envy-highscores.png)
-        - [HP Envy end screenshot](docs/testing/device+browser-tests/HP-envy-end.png)
-        - [HP Envy modal screenshot](docs/testing/device+browser-tests/HP-envy-modal.png)
-   
-    - Mozilla Firefox (browser): 
-
-        - [HP Envy Mozilla index screenshot](docs/testing/device+browser-tests/hp-mozilla-index.png)
-        - [HP Envy Mozilla game screenshot](docs/testing/device+browser-tests/hp-mozilla-game.png)
-        - [HP Envy Mozilla highscores screenshot](docs/testing/device+browser-tests/hp-mozilla-highscores.png)
-        - [HP Envy Mozilla end screenshot](docs/testing/device+browser-tests/hp-mozilla-end.png)
-        - [HP Envy Mozilla modal screenshot](docs/testing/device+browser-tests/hp-mozilla-modal.png)
-
-    - Microsoft Edge (brower)
-
-        - [HP Envy Edge index screenshot](docs/testing/device+browser-tests/edge-hp-index.png)
-        - [HP Envy Edge game screenshot](docs/testing/device+browser-tests/edge-hp-game.png)
-        - [HP Envy Edge highscore screenshot](docs/testing/device+browser-tests/edge-hp-highscores.png)
-        - [HP Envy Edge end screenshot](docs/testing/device+browser-tests/edge-hp-end.png)
-        - [HP Envy Edge modal screenshot](docs/testing/device+browser-tests/edge-hp-modal.png)
-
-    - Opera (browser) 
-
-        - [HP Envy Opera index screenshot](docs/testing/device+browser-tests/Opera-HP-index.png)
-        - [HP Envy Opera game screenshot](docs/testing/device+browser-tests/Opera-HP-game.png)
-        - [HP Envy Opera highscore screenshot](docs/testing/device+browser-tests/Opera-HP-highscore.png)
-        - [HP Envy Opera end screenshot](docs/testing/device+browser-tests/Opera-HP-end.png)
-        - [HP Envy Opera modal screenshot](docs/testing/device+browser-tests/Opera-HP-modal.png)
-
-- PC HP desktop 31.5" screen
-
-    - Google Chrome (browser)
-
-        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-index.png)
-        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-game.png)
-        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-highscore.png)
-        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-end.png)
-        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-modal.png)
-
-    - Microsoft Edge (browser)
-
-        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-edge-index.png)
-        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-edge-game.png)
-        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-edge-highscore.png)
-        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-edge-end.png)
-        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-edge-modal.png)
-
-- MacOs operating system tested on Safari browser: as I did not have any devices with MacOs operating system, I used [BrowserStack](https://www.browserstack.com/) to test the site on safari. Although is not as acurate as an Apple device, it helped me to see there was no issues in compatibility with a Safari browser.
-
-    - Safari (browser)
-        
-        - [Safari index screenshot](docs/testing/device+browser-tests/MAC-emulator-index.png)
-        - [Safari game screenshot](docs/testing/device+browser-tests/MAC-emulator-game.png)
-        - [Safari highscore screenshot](docs/testing/device+browser-tests/MAC-emulator-highscore.png)
-        - [Safari end screenshot](docs/testing/device+browser-tests/MAC-emulator-end.png)
-        - [Safari modal screenshot](docs/testing/device+browser-tests/MAC-emulator-modal.png)
 
 ---
 
