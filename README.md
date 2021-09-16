@@ -480,6 +480,9 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - [Am I Responsive](http://ami.responsivedesign.is/)
   - A tool to check how the website appears and the functionality on various devices. The mockups on this document was generated with this tool.
 
+- [[Media Genesis](https://responsivedesignchecker.com)]
+  - A tool to check the responsiveness on various device sizes.
+
 - [Responsinator](http://www.responsinator.com/)
   - Similar to [Am I responsive](http://ami.responsivedesign.is/) this is a web based application that allows a website to be checked an a large amount of devices in portrait and landscape view.
 
