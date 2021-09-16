@@ -129,4 +129,13 @@ strong {
         left: 0.5rem;
     }
 
+    h3 {
+        font-size: 25px;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 900;
+    }
+
 }
