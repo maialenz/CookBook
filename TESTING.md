@@ -300,7 +300,7 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Chrome login](docs/testing/browser-tests/chrome-login.png)
         - [HP Envy Chrome register](docs/testing/browser-tests/chrome-register.png)
         - [HP Envy Chrome profile](docs/testing/browser-tests/chrome-profile.png)
-        - [HP Envy Chrome profile bottom](docs/testing/browser-tests/chrome-profile-bottom.jpg)
+        - [HP Envy Chrome profile bottom](docs/testing/browser-tests/chrome-profile-bottom.png)
         - [HP Envy Chrome edit delete option for logged user only](docs/testing/browser-tests/chrome-options.png)
         - [HP Envy Chrome add recipe](docs/testing/browser-tests/chrome-add.png)
         - [HP Envy Chrome add recipe bottom](docs/testing/browser-tests/chrome-add-bottom.png)
@@ -314,12 +314,10 @@ All the screenshots to my manual tests on various major devices are below:
 
     - Mozilla Firefox (browser): 
         - [HP Envy Mozilla home](docs/testing/browser-tests/mozilla-home.png)
-        - [HP Envy Mozilla full recipe](docs/testing/browser-tests/mozilla-full-recipe.png)
-        - [HP Envy Mozilla full recipe bottom](docs/testing/browser-tests/mozilla-full-recipe-bottom.png)
         - [HP Envy Mozilla login](docs/testing/browser-tests/mozilla-login.png)
         - [HP Envy Mozilla register](docs/testing/browser-tests/mozilla-register.png)
         - [HP Envy Mozilla profile](docs/testing/browser-tests/mozilla-profile.png)
-        - [HP Envy Mozilla profile bottom](docs/testing/browser-tests/mozilla-profile-bottom.jpg)
+        - [HP Envy Mozilla profile bottom](docs/testing/browser-tests/mozilla-profile-bottom.png)
         - [HP Envy Mozilla edit delete option for logged user only](docs/testing/browser-tests/mozilla-options.png)
         - [HP Envy Mozilla add recipe](docs/testing/browser-tests/mozilla-add.png)
         - [HP Envy Mozilla add recipe bottom](docs/testing/browser-tests/mozilla-add-bottom.png)
@@ -331,6 +329,42 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Mozilla full recipe](docs/testing/browser-tests/mozilla-full-recipe.png)
         - [HP Envy Mozilla full recipe bottom](docs/testing/browser-tests/mozilla-full-recipe-bottom.png)
    
+    - Microsoft Edge (brower)
+
+        - [HP Envy Edge home](docs/testing/browser-tests/edge-home.png)
+        - [HP Envy Edge login](docs/testing/browser-tests/edge-login.png)
+        - [HP Envy Edge register](docs/testing/browser-tests/edge-register.png)
+        - [HP Envy Edge profile](docs/testing/browser-tests/edge-profile.png)
+        - [HP Envy Edge profile bottom](docs/testing/browser-tests/edge-profile-bottom.png)
+        - [HP Envy Edge edit delete option for logged user only](docs/testing/browser-tests/edge-options.png)
+        - [HP Envy Edge add recipe](docs/testing/browser-tests/edge-add.png)
+        - [HP Envy Edge add recipe bottom](docs/testing/browser-tests/edge-add-bottom.png)
+        - [HP Envy Edge edit recipe](docs/testing/browser-tests/edge-edit.png)
+        - [HP Envy Edge delete recipe](docs/testing/browser-tests/edge-delete.png)
+        - [HP Envy Edge add course](docs/testing/browser-tests/edge-add-course.png)
+        - [HP Envy Edge edit course](docs/testing/browser-tests/edge-edit-course.png)
+        - [HP Envy Edge courses](docs/testing/browser-tests/edge-courses.png)
+        - [HP Envy Edge full recipe](docs/testing/browser-tests/edge-full-recipe.png)
+        - [HP Envy Edge full recipe bottom](docs/testing/browser-tests/edge-full-recipe-bottom.png)
+
+    - Opera (browser) 
+
+        - [HP Envy Opera home](docs/testing/browser-tests/opera-home.png)
+        - [HP Envy Opera login](docs/testing/browser-tests/opera-login.png)
+        - [HP Envy Opera register](docs/testing/browser-tests/opera-register.png)
+        - [HP Envy Opera profile](docs/testing/browser-tests/opera-profile.png)
+        - [HP Envy Opera profile bottom](docs/testing/browser-tests/opera-profile-bottom.png)
+        - [HP Envy Opera edit delete option for logged user only](docs/testing/browser-tests/opera-options.png)
+        - [HP Envy Opera add recipe](docs/testing/browser-tests/opera-add.png)
+        - [HP Envy Opera add recipe bottom](docs/testing/browser-tests/opera-add-bottom.png)
+        - [HP Envy Opera edit recipe](docs/testing/browser-tests/opera-edit.png)
+        - [HP Envy Opera delete recipe](docs/testing/browser-tests/opera-delete.png)
+        - [HP Envy Opera add course](docs/testing/browser-tests/opera-add-course.png)
+        - [HP Envy Opera edit course](docs/testing/browser-tests/opera-edit-course.png)
+        - [HP Envy Opera courses](docs/testing/browser-tests/opera-courses.png)
+        - [HP Envy Opera full recipe](docs/testing/browser-tests/opera-full-recipe.png)
+        - [HP Envy Opera full recipe bottom](docs/testing/browser-tests/opera-full-recipe-bottom.png)
+
 
 
 
