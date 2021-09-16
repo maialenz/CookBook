@@ -365,9 +365,16 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Opera full recipe](docs/testing/browser-tests/opera-full-recipe.png)
         - [HP Envy Opera full recipe bottom](docs/testing/browser-tests/opera-full-recipe-bottom.png)
 
+        
 
 
+---
 
+## FURTHER TESTING
+
+- All features have been thoroughtly tested by myself on different screen sizes/operating systems, including all internal links and buttons, hover effects, wrong inputs and errors, different users, closing modals , etc.
+
+- The live project has been tested by family and friends, acting as anonymous and registered users, on their own devices of different makes and sizes to make sure everything was working as designed. They checked all features mentioned above. They adviced on the need of an edit button inside the modal to have easy access to this feature. This tests can be seen as inputs from my family are on a different language.
 
 ## Bugs
 
