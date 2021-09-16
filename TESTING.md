@@ -365,8 +365,7 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Opera full recipe](docs/testing/browser-tests/opera-full-recipe.png)
         - [HP Envy Opera full recipe bottom](docs/testing/browser-tests/opera-full-recipe-bottom.png)
 
-        
-
+  
 
 ---
 
@@ -378,4 +377,17 @@ All the screenshots to my manual tests on various major devices are below:
 
 ## Bugs
 
- The biggest problem found when carrying this test was that the message box was too short, so I changed the column size on the base.html from s6 to s10. The same way, the welcome card on the profile, the h4 font size was too large, so I added it to a media query for small screen sizes.
+- When testing on smallest sizes (galaxy fold on Chrome Dev Tools) I noticed that the message box was too short for the message, and it showed in multiple lines, showing only one word per line. To fix this, I changed the column size on the base.html from s6 to s10. This fixed the issue.
+
+- Similar to the issue before, the welcome card on the profile, the h4 font size was too large, so I added it to a media query for small screen sizes. This fixed the issue
+
+- When testing the delete button, I noticed only the first item of the list was been removed instead of the one I was selecting. I checked the id, but the issue was that I used the same modal twice, without changing the id on the modal. So the iteration was only counting the first delete, and not targetting the ObjectId. 
+    - To fix this I added {{ loop.index }} in all sections where the modal was present. This fixed the issue.
+
+- When adding the full_recipe(), the page was rendering with no information on the fields. 
+    - I noticed I missed the underscore to the id ({_id: 'ObjectId'}) on the dictionary.
+    - Fixing this error fixed the issue.
+
+- When adding the background to the body, this would only show over the rest of the elements. 
+    - To fix this i used  body::before. 
+    - I did not use this at the end and instead I used a background and styling provided by [Hero Patterns](https://www.heropatterns.com/)
