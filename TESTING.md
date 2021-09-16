@@ -295,7 +295,22 @@ All the screenshots to my manual tests on various major devices are below:
 
 - HP Envy 13" (laptop)
 
-  
+    - Google Chrome (browser):
+        - [HP Envy Chrome home](docs/testing/browser-tests/chrome-home.png)
+        - [HP Envy Chrome login](docs/testing/browser-tests/chrome-login.png)
+        - [HP Envy Chrome register](docs/testing/browser-tests/chrome-register.png)
+        - [HP Envy Chrome profile](docs/testing/browser-tests/chrome-profile.png)
+        - [HP Envy Chrome profile bottom](docs/testing/browser-tests/chrome-profile-bottom.jpg)
+        - [HP Envy Chrome edit delete option for logged user only](docs/testing/browser-tests/chrome-options.png)
+        - [HP Envy Chrome add recipe](docs/testing/browser-tests/chrome-add.png)
+        - [HP Envy Chrome add recipe bottom](docs/testing/browser-tests/chrome-add-bottom.png)
+        - [HP Envy Chrome edit recipe](docs/testing/browser-tests/chrome-edit.png)
+        - [HP Envy Chrome delete recipe](docs/testing/browser-tests/chrome-delete.png)
+        - [HP Envy Chrome add course](docs/testing/browser-tests/chrome-add-course.png)
+        - [HP Envy Chrome edit course](docs/testing/browser-tests/chrome-edit-course.png)
+        - [HP Envy Chrome courses](docs/testing/browser-tests/chrome-courses.png)
+        - [HP Envy Chrome full recipe](docs/testing/browser-tests/chrome-full-recipe.png)
+        - [HP Envy Chrome full recipe bottom](docs/testing/browser-tests/chrome-full-recipe-bottom.png)
 
     - Mozilla Firefox (browser): 
         - [HP Envy Mozilla home](docs/testing/browser-tests/mozilla-home.png)
@@ -316,44 +331,6 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Mozilla full recipe](docs/testing/browser-tests/mozilla-full-recipe.png)
         - [HP Envy Mozilla full recipe bottom](docs/testing/browser-tests/mozilla-full-recipe-bottom.png)
    
-
-    - Microsoft Edge (brower)
-
-        - [HP Envy Edge index screenshot](docs/testing/device+browser-tests/edge-hp-index.png)
-        - [HP Envy Edge game screenshot](docs/testing/device+browser-tests/edge-hp-game.png)
-        - [HP Envy Edge highscore screenshot](docs/testing/device+browser-tests/edge-hp-highscores.png)
-        - [HP Envy Edge end screenshot](docs/testing/device+browser-tests/edge-hp-end.png)
-        - [HP Envy Edge modal screenshot](docs/testing/device+browser-tests/edge-hp-modal.png)
-
-    - Opera (browser) 
-
-        - [HP Envy Opera index screenshot](docs/testing/device+browser-tests/Opera-HP-index.png)
-        - [HP Envy Opera game screenshot](docs/testing/device+browser-tests/Opera-HP-game.png)
-        - [HP Envy Opera highscore screenshot](docs/testing/device+browser-tests/Opera-HP-highscore.png)
-        - [HP Envy Opera end screenshot](docs/testing/device+browser-tests/Opera-HP-end.png)
-        - [HP Envy Opera modal screenshot](docs/testing/device+browser-tests/Opera-HP-modal.png)
-
-- PC HP desktop 31.5" screen
-
-    - Google Chrome (browser)
-
-        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-index.png)
-        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-game.png)
-        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-highscore.png)
-        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-end.png)
-        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-modal.png)
-
-    - Microsoft Edge (browser)
-
-        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-edge-index.png)
-        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-edge-game.png)
-        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-edge-highscore.png)
-        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-edge-end.png)
-        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-edge-modal.png)
-
----
-
-
 
 
 
