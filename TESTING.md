@@ -23,6 +23,7 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
     - [HTML](#html-validator)
     - [CSS](#css-validator)
     - [JSHint](#jshint-validator)
+    - [PyLint](#pylint-validator)
 3. [LIGHTHOUSE TESTING](#lighthouse-testing)
    - Mobile
    - Desktop
@@ -86,12 +87,17 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
 
 - be able to delete any users recipes:
     - the admin user has the option to delete all users recipes
+
     ![screenshot admin delete](docs/testing/user-stories/admin-access.png)
+
 - be able to edit any users recipes
     - the admin user has the option to edit all users recipes
+
     ![screenshot admin delete](docs/testing/user-stories/admin-access.png)
+
 - have unique access to all features 
     - the admin user has access to all funtionality. Admin can delete, edit any course created by any registered user. Furthermore, the user has unique tab for managing categories that are displayed for all user at the time of creating a recipe. This option allows admin user to add, edit and remove course types.
+
     ![screenshot admin access](docs/testing/user-stories/courses-admin.png)
     ![screenshot admin new course](docs/testing/user-stories/new-course-admin.png)
 
@@ -106,15 +112,85 @@ As a css validator, I also used w3 Validator to make sure it checked my style.cs
 (See passed validator results at the end of HTML and CSS sections)
 
 ### HTML Validator:
-    - As to develop this project with the [Jinja Templating Engine](https://jinja.palletsprojects.com/en/3.0.x/), the validator would count all url_for() as errors. So I had to validate the code introducing the URL on the [W3 Validator](https://validator.w3.org/) to check the whole website.
-    - Although the validator gave a warning because a section did not have a header, the reason for this is that this section only shows if there is a message to give feedback to the user. So no header is needed in this case.
-    ![screenshot of html validator](docs/testing/validator/html-validator.png)
+
+- As to develop this project with the [Jinja Templating Engine](https://jinja.palletsprojects.com/en/3.0.x/), the validator would count all url_for() as errors. So I had to validate the code introducing the URL on the [W3 Validator](https://validator.w3.org/) to check the whole website.
+
+- Although the validator gave a warning because a section did not have a header, the reason for this is that this section only shows if there is a message to give feedback to the user. So no header is needed in this case.
+[HTML Validator result](docs/testing/validator/html-validator.png)
+
+---
 
 ### CSS Validator
-    - The [jigsaw validator](https://jigsaw.w3.org/css-validator) did not find any errors.
-    ![screenshot of css passed](docs/testing/validator/css-validator.png)
+- The [jigsaw validator](https://jigsaw.w3.org/css-validator) did not find any errors.
+[css validator result](docs/testing/validator/css-validator.png)
+
+---
 
 ### JSHint Validator
-    - [JSHint](https://jshint.com/) did not find any warning or errors.
-    
-    ![Screenshot of jshint validator pass](docs/testing/validator/jshint-validator.png)
+- [JSHint](https://jshint.com/) did not find any warning or errors.
+[JSHint validator result](docs/testing/validator/jshint-validator.png)
+
+---
+
+### Pylint Validator
+- After running pylint app.py on the terminal, I got a few warnings:
+    - e argument does not user snake_case. I changed this for app_error. This still gives a warning sayin Unused argument. But if this argument is removed from hadle_404(app_error) and server_error(500), the 404.html and 500.html do not render. So it was decided to leave the arguments on plave.
+- Unnecessary 'else' after 'return' and unnecessary 'elif' after'return': although I changed the elif statements at (/register) for if statements, I decided to leave the else statement in place on line 124 as changing this for another if statement makes the code a little confusing to understand. 
+[Pylint validations result](docs/testing/validator/pylint-validator.png)
+
+---
+
+## LIGHTHOUSE TESTING
+
+Using DevTool's Lighthouse tool, I checked all pages on mobile and desktop to make sure the scores were as high as I posibly could. Below can be found the results and scores the tests tests
+
+(All tests were carried out the same way: I cleared cache data, opened new incognito page (Chrome and Edge), and reloaded and tested each page twice. Same procedure was used for mobile and web assessment)
+
+Due to the simplicity of the website, the results of the lighthouse testing have come back very strong. Since there is very few heavy files, the site loads very fast and with no major issues, both on mobile and desktop, increasing like this the UX.
+
+The only major thing to be fixed to improve accessibility was the missing attributes aria-label and alt for images. This was fixed immediately, improving considerably the accessibility scores.
+
+### Mobile
+
+- [Home mobile Anonimus User:](docs/testing/lighthouse/Mobile-homepage.png)
+In the home page the performance was lower than the rest because the loading time of the images.
+
+- [Logged User](docs/testing/lighthouse/logged-home.png)
+
+- [Login Page](docs/testing/lighthouse/login-mobile.png)
+
+- [Register Page](docs/testing/lighthouse/register-mobile.png)
+
+- [Profile Page](docs/testing/lighthouse/mobile-profile.png)
+
+- [Add recipe](docs/testing/lighthouse/add-recipe-mobile.png)
+
+- [Edit Recipe](docs/testing/lighthouse/edit-recipe-mobile.png)
+
+- [Manage Courses](docs/testing/lighthouse/manage-course-mobile.png)
+
+- [Add course](docs/testing/lighthouse/add-course-mobile.png)
+
+- [Edit course](docs/testing/lighthouse/edit-course-mobile.png)
+
+### Desktop
+
+- [Home mobile Anonymous User:](docs/testing/lighthouse/desktop-anonymous-home.png)
+
+- [Logged User](docs/testing/lighthouse/desktop-home.png)
+
+- [Login Page](docs/testing/lighthouse/desktop-login.png)
+
+- [Register Page](docs/testing/lighthouse/desktop-register.png)
+
+- [Profile Page](docs/testing/lighthouse/desktop-profile.png)
+
+- [Add recipe](docs/testing/lighthouse/desktop-add-recipe.png)
+
+- [Edit Recipe](docs/testing/lighthouse/desktop-edit-recipe.png)
+
+- [Manage Courses](docs/testing/lighthouse/desktop-manage-course.png)
+
+- [Add course](docs/testing/lighthouse/desktop-add-course.png)
+
+- [Edit course](docs/testing/lighthouse/desktop-edit-course.png)
