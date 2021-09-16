@@ -3,7 +3,7 @@
 
 <h3 class="center-align text-shadow">Manage Courses!</h3>
 
-<!-- Button to redirect to add_recipe.html -->
+<!-- Button to redirect to add_course.html -->
 <div class="center-align">
 	<a href="{{ url_for('add_course') }}" class="btn-large light-blue white-text text-shadow hvr-grow">
 		Add a new course! <i class="fas fa-plus-square right"></i>
@@ -22,10 +22,10 @@
 					class="btn-floating halfway-fab waves-effect waves-light red left modal-trigger hvr-grow">
 					<i class="fas fa-trash-alt"></i>
 				</a>
-				<!-- modal to delete recipe-->
+				<!-- modal to delete course-->
 				<div id="{{ loop.index }}" class="modal">
 					<div class="modal-content">
-						<h4>Are you sure you want to delete this recipe?</h4>
+						<h4>Are you sure you want to delete this course?</h4>
 						<p>Once you have deleted this course, you cannot retrieve it again</p>
 					</div>
 					<div class="modal-footer center-align">
