@@ -287,12 +287,69 @@ All the screenshots to my manual tests on various major devices are below:
     - [Galaxy Tab S5e add recipe bottom](docs/testing/browser-tests/5se-add-bottom.jpg)
     - [Galaxy Tab S5e edit recipe](docs/testing/browser-tests/5se-edit.jpg)
     - [Galaxy Tab S5e delete recipe](docs/testing/browser-tests/5se-delete.jpg)
-    - [Galaxy Tab S5e full recipe](docs/testing/browser-tests/5se-full.jpg)
     - [Galaxy Tab S5e add course](docs/testing/browser-tests/5se-new-course.jpg)
     - [Galaxy Tab S5e edit course](docs/testing/browser-tests/5se-edit-course.jpg)
     - [Galaxy Tab S5e courses](docs/testing/browser-tests/5se-courses.jpg)
+    - [Galaxy Tab S5e full recipe](docs/testing/browser-tests/5se-full.jpg)
     - [Galaxy Tab S5e full recipe bottom](docs/testing/browser-tests/5se-full-recipe-bottom.jpg)
 
+- HP Envy 13" (laptop)
+
+  
+
+    - Mozilla Firefox (browser): 
+        - [HP Envy Mozilla home](docs/testing/browser-tests/mozilla-home.png)
+        - [HP Envy Mozilla full recipe](docs/testing/browser-tests/mozilla-full-recipe.png)
+        - [HP Envy Mozilla full recipe bottom](docs/testing/browser-tests/mozilla-full-recipe-bottom.png)
+        - [HP Envy Mozilla login](docs/testing/browser-tests/mozilla-login.png)
+        - [HP Envy Mozilla register](docs/testing/browser-tests/mozilla-register.png)
+        - [HP Envy Mozilla profile](docs/testing/browser-tests/mozilla-profile.png)
+        - [HP Envy Mozilla profile bottom](docs/testing/browser-tests/mozilla-profile-bottom.jpg)
+        - [HP Envy Mozilla edit delete option for logged user only](docs/testing/browser-tests/mozilla-options.png)
+        - [HP Envy Mozilla add recipe](docs/testing/browser-tests/mozilla-add.png)
+        - [HP Envy Mozilla add recipe bottom](docs/testing/browser-tests/mozilla-add-bottom.png)
+        - [HP Envy Mozilla edit recipe](docs/testing/browser-tests/mozilla-edit-recipe.png)
+        - [HP Envy Mozilla delete recipe](docs/testing/browser-tests/mozilla-delete.png)
+        - [HP Envy Mozilla add course](docs/testing/browser-tests/mozilla-add-course.png)
+        - [HP Envy Mozilla edit course](docs/testing/browser-tests/mozilla-edit-course.png)
+        - [HP Envy Mozilla courses](docs/testing/browser-tests/mozilla-courses.png)
+        - [HP Envy Mozilla full recipe](docs/testing/browser-tests/mozilla-full-recipe.png)
+        - [HP Envy Mozilla full recipe bottom](docs/testing/browser-tests/mozilla-full-recipe-bottom.png)
+   
+
+    - Microsoft Edge (brower)
+
+        - [HP Envy Edge index screenshot](docs/testing/device+browser-tests/edge-hp-index.png)
+        - [HP Envy Edge game screenshot](docs/testing/device+browser-tests/edge-hp-game.png)
+        - [HP Envy Edge highscore screenshot](docs/testing/device+browser-tests/edge-hp-highscores.png)
+        - [HP Envy Edge end screenshot](docs/testing/device+browser-tests/edge-hp-end.png)
+        - [HP Envy Edge modal screenshot](docs/testing/device+browser-tests/edge-hp-modal.png)
+
+    - Opera (browser) 
+
+        - [HP Envy Opera index screenshot](docs/testing/device+browser-tests/Opera-HP-index.png)
+        - [HP Envy Opera game screenshot](docs/testing/device+browser-tests/Opera-HP-game.png)
+        - [HP Envy Opera highscore screenshot](docs/testing/device+browser-tests/Opera-HP-highscore.png)
+        - [HP Envy Opera end screenshot](docs/testing/device+browser-tests/Opera-HP-end.png)
+        - [HP Envy Opera modal screenshot](docs/testing/device+browser-tests/Opera-HP-modal.png)
+
+- PC HP desktop 31.5" screen
+
+    - Google Chrome (browser)
+
+        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-index.png)
+        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-game.png)
+        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-highscore.png)
+        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-end.png)
+        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-chrome-modal.png)
+
+    - Microsoft Edge (browser)
+
+        - [HP Desktop index screenshot](docs/testing/device+browser-tests/hp-desktop-edge-index.png)
+        - [HP Desktop game screenshot](docs/testing/device+browser-tests/hp-desktop-edge-game.png)
+        - [HP Desktop highscore screenshot](docs/testing/device+browser-tests/hp-desktop-edge-highscore.png)
+        - [HP Desktop end screenshot](docs/testing/device+browser-tests/hp-desktop-edge-end.png)
+        - [HP Desktop modal screenshot](docs/testing/device+browser-tests/hp-desktop-edge-modal.png)
 
 ---
 
