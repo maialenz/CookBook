@@ -20,15 +20,9 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
     - [Registered user](#registered-user)
     - [Admin user](#admin-user)
 2. [VALIDATOR CHECKS](#validator)
-   - [HTML](#html-validator)
-     - Index.html
-     - Game.html
-     - End.html
-   - [CSS](#css-validator)
-     - style.css
-     - game.css
-     - highscore.css
-   - [JSHint](#jshint-validator)
+    - [HTML](#html-validator)
+    - [CSS](#css-validator)
+    - [JSHint](#jshint-validator)
 3. [LIGHTHOUSE TESTING](#lighthouse-testing)
    - Mobile
    - Desktop
@@ -66,7 +60,7 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
     - Anonymous users are not able to see any of the buttons available at the bottom of the recipe card.
     ![screenshot of no buttons](docs/testing/user-stories/nobuttons.png)
 
-#### As a registered user I want to:
+#### Registered user:
 
 - be able to manage my own posts by editing and/or deleting them
     - registered and logged users are able to manage only the recipes they have created from various places.
@@ -88,7 +82,7 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
 - not to lose any recipes because others have removed it
     - As the option before, other users don't have the option to see my recipes either.
 
- #### As the admin I want to:
+ #### Admin user:
 
 - be able to delete any users recipes:
     - the admin user has the option to delete all users recipes
@@ -100,3 +94,27 @@ Once finished, I tested my site on a two different phones, laptop, tablet and de
     - the admin user has access to all funtionality. Admin can delete, edit any course created by any registered user. Furthermore, the user has unique tab for managing categories that are displayed for all user at the time of creating a recipe. This option allows admin user to add, edit and remove course types.
     ![screenshot admin access](docs/testing/user-stories/courses-admin.png)
     ![screenshot admin new course](docs/testing/user-stories/new-course-admin.png)
+
+---
+
+## VALIDATOR:
+
+During the whole project, I continuously checked my code using W3 Validators to make sure I fixed my code as I wrote it. At the end, I ran all the finished pages and made sure all the errors were fixed.
+
+As a css validator, I also used w3 Validator to make sure it checked my style.css file to CSS level 3 + SVG standards.
+
+(See passed validator results at the end of HTML and CSS sections)
+
+### HTML Validator:
+    - As to develop this project with the [Jinja Templating Engine](https://jinja.palletsprojects.com/en/3.0.x/), the validator would count all url_for() as errors. So I had to validate the code introducing the URL on the [W3 Validator](https://validator.w3.org/) to check the whole website.
+    - Although the validator gave a warning because a section did not have a header, the reason for this is that this section only shows if there is a message to give feedback to the user. So no header is needed in this case.
+    ![screenshot of html validator](docs/testing/validator/html-validator.png)
+
+### CSS Validator
+    - The [jigsaw validator](https://jigsaw.w3.org/css-validator) did not find any errors.
+    ![screenshot of css passed](docs/testing/validator/css-validator.png)
+
+### JSHint Validator
+    - [JSHint](https://jshint.com/) did not find any warning or errors.
+    
+    ![Screenshot of jshint validator pass](docs/testing/validator/jshint-validator.png)
