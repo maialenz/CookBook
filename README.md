@@ -9,7 +9,7 @@
 
 This website is a virtual cookbook to save and keep track of personal recipes and allow other users to share with others their own culinary creations, family traditions, etc.
 
-The website will be responsive and accessible on all devices, but it's optimized to be seen on medium screens, as the user will want to have the device close to them to be able to cook along with it. The website will be visually simple but pleasant, focusing on the posibility to update the data available to the user. It will be aimed for those people who want to store and share their own cooking creations with others.
+The website will be responsive and accessible on all devices, but it's optimized to be seen on medium or small screens, as the user will want to have the device close to them to be able to cook along with it. The website will be visually simple but pleasant, focusing on the posibility to update the data available to the user. It will be aimed for those people who want to store and share their own cooking creations with others.
 
 ---
 
@@ -22,7 +22,7 @@ The website will be responsive and accessible on all devices, but it's optimized
   - [Strategy plane](#strategy-plane)
     - [User needs](#user-needs)
     - [Technical capabilities](#technical-capabilities)
-  - [Scope plane](#scope-plane-|-trade-offs)
+  - [Scope plane](#scope-plane)
   - [Structure plane](#structure-plane)
   - [Skeleton plane](#Skeleton-plane)
 
@@ -119,7 +119,7 @@ This will all be achieved through creating a clear and strong UI focusing on wel
 
 ---
 
-### **Scope plane | Trade-offs**
+### **Scope plane**
 
 - **Features within the design plan with highest priority:**
 
@@ -153,7 +153,6 @@ This will all be achieved through creating a clear and strong UI focusing on wel
       - Admin user has access to all links to functionality registered users have plus the option to add a course.
     - The navigation bar will be responsible and will reduce to a hamburger size to keep all links tidy and organized. The hamburger menu will be positioned on the right side so users can access to the navigation links with the right hand. 
 
-  
   - Body 
   
     - Home Page Elements: 
@@ -281,58 +280,64 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 - The three collections in this database are:
 
-  - Users data: All user registrations will be stored in this collection. The passwords are securely stored by using Pythons Wekzeug Security password hash. This generates a random character string which is converted into a unique, irreversible bit array. 
+### Users data
 
-      | Users              | Data Type     |
-      | ------------------ |:-------------:|
-      | _id                | ObjectId      |
-      | username           | string        |
-      | password           | string        |
+All user registrations will be stored in this collection. The passwords are securely stored by using Pythons Wekzeug Security password hash. This generates a random character string which is converted into a unique, irreversible bit array. 
 
-  - Recipes data: The website is based around this collection.
+    | Users              | Data Type     |
+    | ------------------ |:-------------:|
+    | _id                | ObjectId      |
+    | username           | string        |
+    | password           | string        |
 
-    - Users can add a recipe that is added into the database which stores each users recipe. This recipe is connected to the user collection by the recipe_by and to the courses collection by the type of recipe
+### Recipes data 
+  
+The website is based around this collection.
 
-    - Some fields from this collection are used to search the database by: name, course type, difficulty.
+  - Users can add a recipe that is added into the database which stores each users recipe. This recipe is connected to the user collection by the recipe_by and to the courses collection by the type of recipe
 
-      | Recipes            | Data Type     |
-      | ------------------ |:-------------:|
-      | _id                | ObjectId      |
-      | course_type        | string        |
-      | recipe_name        | string        |
-      | recipe_description | string        |
-      | image_url          | string        |
-      | recipe_difficulty  | string        |
-      | ingredient_1       | string        |
-      | ingredient_2       | string        |
-      | ingredient_3       | string        |
-      | ingredient_4       | string        |
-      | ingredient_5       | string        |
-      | ingredient_6       | string        |
-      | ingredient_7       | string        |
-      | direction_1        | string        |
-      | direction_2        | string        |
-      | direction_3        | string        |
-      | direction_4        | string        |
-      | direction_5        | string        |
-      | direction_6        | string        |
-      | direction_7        | string        |
-      | prep_time          | string        |
-      | cook_time          | string        |
-      | serves             | string        |
-      | vegetarian         | string        |
-      | recipe_by          | string        |
+  - Some fields from this collection are used to search the database by: name, course type, difficulty.
 
-  - Courses data: This courses are available to the user as a selection dropdown when they add a new recipe. Only admin user is allowed to create a new database and add it into the collection. 
+    | Recipes            | Data Type     |
+    | ------------------ |:-------------:|
+    | _id                | ObjectId      |
+    | course_type        | string        |
+    | recipe_name        | string        |
+    | recipe_description | string        |
+    | image_url          | string        |
+    | recipe_difficulty  | string        |
+    | ingredient_1       | string        |
+    | ingredient_2       | string        |
+    | ingredient_3       | string        |
+    | ingredient_4       | string        |
+    | ingredient_5       | string        |
+    | ingredient_6       | string        |
+    | ingredient_7       | string        |
+    | direction_1        | string        |
+    | direction_2        | string        |
+    | direction_3        | string        |
+    | direction_4        | string        |
+    | direction_5        | string        |
+    | direction_6        | string        |
+    | direction_7        | string        |
+    | prep_time          | string        |
+    | cook_time          | string        |
+    | serves             | string        |
+    | vegetarian         | string        |
+    | recipe_by          | string        |
 
-    - The course type connects this collection with the recipes collection.
+### Courses data 
+  
+This courses are available to the user as a selection dropdown when they add a new recipe. Only admin user is allowed to create a new database and add it into the collection. 
 
-    - It is also used to search for a course type
+  - The course type connects this collection with the recipes collection.
 
-      | Courses            | Data Type     |
-      | ------------------ |:-------------:|
-      | _id                | ObjectId      |
-      | course_type        | string        |
+  - It is also used to search for a course type
+
+    | Courses            | Data Type     |
+    | ------------------ |:-------------:|
+    | _id                | ObjectId      |
+    | course_type        | string        |
       
 ---
 

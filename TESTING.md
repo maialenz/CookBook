@@ -293,6 +293,7 @@ All the screenshots to my manual tests on various major devices are below:
     - [Galaxy Tab S5e full recipe](docs/testing/browser-tests/5se-full.jpg)
     - [Galaxy Tab S5e full recipe bottom](docs/testing/browser-tests/5se-full-recipe-bottom.jpg)
 
+
 - HP Envy 13" (laptop)
 
     - Google Chrome (browser):
@@ -385,16 +386,13 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Desktop full recipe](docs/testing/browser-tests/desktop-full-recipe.png)
         - [HP Desktop full recipe bottom](docs/testing/browser-tests/desktop-full-recipe-bottom.png)
 
-
-
-
 ---
 
 ## FURTHER TESTING
 
 - All features have been thoroughtly tested by myself on different screen sizes/operating systems, including all internal links and buttons, hover effects, wrong inputs and errors, different users, closing modals , etc.
 
-- The live project has been tested by family and friends, acting as anonymous and registered users, on their own devices of different makes and sizes to make sure everything was working as designed. They checked all features mentioned above. They adviced on the need of an edit button inside the modal to have easy access to this feature. This tests can be seen as inputs from my family are on a different language.
+- The live application has been tested by family and friends, acting as anonymous and registered users, on their own devices of different makes and sizes to make sure everything was working as designed. They checked all features mentioned above. They adviced on the need of an edit button inside the modal to have easy access to this feature. This tests can be seen as inputs from my family are on a different language.
 
 ## Bugs
 
@@ -426,7 +424,7 @@ Listed below are the biggest bugs that I encountered whilst building this projec
 
 - In the admin's profile, in the extra large screens, the admin only card (add courses) moves to the right side, making the card above change sizes. Although I tried to fix this by adding col l4 to all cards, this shows the rest of the users to see the cards offset. 
     - As this site is intended to be seen in small and medium devices, this bug will be attented to be fixed in future releases.
-
+    
 ---
 
 ## <center> Back to [README.md](README.md)
