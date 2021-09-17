@@ -664,10 +664,24 @@ $ python3 app.py
 
 ## CREDITS
 
----
-
 ## REFERENCES
 
+- Referenced the [Werkzeug Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha256.create?view=net-5.0) to read and learn more about sha256 and hashing passwords.
+- Used [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/) to check how flashing messages work and how to apply them to my project
+- Helped me adding styles to fix background issue: [Stackoverflow](https://stackoverflow.com/questions/51555645/materializecss-how-to-make-image-cover-full-width-within-grid) This was removed for the final draft, but helped me understand how to add styles to backgrounds with css.
+- Helped me to apply it to my css stylesheet to remove padding from the bottom of images.[Stackoverflow](https://stackoverflow.com/questions/45921384/remove-bottom-padding-between-rows-materialize/459220280
+- Used [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height) to see different options for line-heights and their properties to be applied on the css stylesheet.
+- [Stackoverflow](https://stackoverflow.com/questions/7877522/how-do-i-disable-missing-docstring-warnings-at-a-file-level-in-pylint) this answer helped me add docstrings to app.py file
+- The documentation from [Flask](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) helped me create the error handler functions on app.py
+- This question and the answers from [Stackoverflow](https://stackoverflow.com/questions/21833872/why-does-pylint-object-to-single-character-variable-names) helped me understand pylint errors about the use of e as parameter inside the error functions.
+- This post from [Stackoverflow](https://stackoverflow.com/questions/58008638/how-to-add-images-in-css-file-i-am-using-python-flask-for-website-development) refreshed me on how to add images when using flask and jinja templates.
+- This article from [Css Tricks](https://css-tricks.com/perfect-full-page-background-image/) helped me applying styling to the cs file to make the background image fill the page. I did not include any real pictures as background on the end draft.
+- [This] post helped me apply opacity to backgrounds on css
+- I found the answer to how to make all materialize cards the same highth on this [Stackoverflow](https://stackoverflow.com/questions/2083831/css-background-image-does-not-fill-when-scrolling) post.
+- The [Python Documentation](https://docs.python.org/3/reference/compound_stmts.html) helped me build the authorization statements to block users who are not logged in or are unauthorized to access certain pages from gaining access.
+- This post from [Stackoverflow](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b) helped me keeping the footer on the bottom. In the last draft I used the materialize footer instead of building it myself.
+- I found the solution to the delete recipe and cards problem in this post on [Stackoverflow](https://stackoverflow.com/questions/53046455/mongoose-delete-item-first-one-always-gets-deleted)
+- This question on [Stackoverflow](https://stackoverflow.com/questions/7877522/how-do-i-disable-missing-docstring-warnings-at-a-file-level-in-pylint) helped me apply docstrings at a file level when pylint gave me the error.
 ---
 
 ## ACKNOWLEDGEMENTS
