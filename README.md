@@ -505,7 +505,7 @@ This courses are available to the user as a selection dropdown when they add a n
   - Jinja is a web template engine for the Python programming language. It allows writing code similar to Python syntax. Then the template is passed data to render the final document.
   - Jinja templating is built into the [Flask](https://flask.palletsprojects.com/en/2.0.x/) library.
 
-- [PyMongo](ttps://pymongo.readthedocs.io/en/stable/]
+- [PyMongo](ttps://pymongo.readthedocs.io/en/stable/)
   - PyMongo is the official MongoDB Python driver for MongoDB.
 
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -573,25 +573,32 @@ In order to successfully deploy the application that uses Python and MongoDB, th
 
   6. Visit Heroku and create/log in your account.
 
-  7.  Under the profile picture, Select 'New App':
+  7.  Under the profile picture, Select 'New App'.
+
   ![Screenshot of the New App option on Heroku](docs/deployment/newapp.png)
 
   8. Input a project name (it has to be unique), select the region closes to you, and click on Create app.
+
   ![Create new app form on Heroku](docs/deployment/newapp-form.png)
 
   9. This will redirect you to the deploy screen. You have the options to deploy connecting Heroku via the CLI (follow the instructions provided) or connect through the GitHub account. This is the way we deployed:
+
   ![Screenshot of deployment method options](docs/deployment/deploy-options.png) 
 
   10. Make sure the GitHub account is displayed and search for the repository to be connected to Heroku.
+
   ![Screenshot of repository seach in Heroku](docs/deployment/search-repo.png)
 
   11. Click on the settings tab and go to the `Config Vars` section. Click on `Reveal Config Vars`. This will show the input fields needed to be filled with the key pair values we previously added to the env.py file. Add them making sure not to add any quotes on any of the fields. (secret key and password values have been covered on the image below)
+
   ![Screenshot of Config Vars in Heroku](docs/deployment/config-vars.png)
 
   12. Return to the Deploy tab and inside the 'Automatic deploys' section select 'Enable Automatic Deploys' to the master branch.
+
   ![Screenshot of automatic deploys on Heroku](docs/deployment/deploys.png)
 
   13. Heroku will start building the app. When finished and if successful a message and a `view` button will appear. 
+  
   ![screenshot of successful deployment](docs/deployment/success.png)
 
   14. Now all the commits pushed to GitHub will automatically be deployed to Heroku!
