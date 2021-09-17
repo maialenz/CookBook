@@ -365,7 +365,28 @@ All the screenshots to my manual tests on various major devices are below:
         - [HP Envy Opera full recipe](docs/testing/browser-tests/opera-full-recipe.png)
         - [HP Envy Opera full recipe bottom](docs/testing/browser-tests/opera-full-recipe-bottom.png)
 
-  
+        
+- PC HP desktop 31.5" screen
+
+    - Google Chrome (browser)
+
+        - [HP Desktop home](docs/testing/browser-tests/desktop-home.png)
+        - [HP Desktop login](docs/testing/browser-tests/desktop-login.png)
+        - [HP Desktop register](docs/testing/browser-tests/desktop-register.png)
+        - [HP Desktop profile](docs/testing/browser-tests/desktop-profile.png)
+        - [HP Desktop edit delete option for logged user only](docs/testing/browser-tests/desktop-options.png)
+        - [HP Desktop add recipe](docs/testing/browser-tests/desktop-add.png)
+        - [HP Desktop add recipe bottom](docs/testing/browser-tests/desktop-add-bottom.png)
+        - [HP Desktop edit recipe](docs/testing/browser-tests/desktop-edit.png)
+        - [HP Desktop delete recipe](docs/testing/browser-tests/desktop-delete.png)
+        - [HP Desktop add course](docs/testing/browser-tests/desktop-add-course.png)
+        - [HP Desktop edit course](docs/testing/browser-tests/desktop-edit-course.png)
+        - [HP Desktop courses](docs/testing/browser-tests/desktop-courses.png)
+        - [HP Desktop full recipe](docs/testing/browser-tests/desktop-full-recipe.png)
+        - [HP Desktop full recipe bottom](docs/testing/browser-tests/desktop-full-recipe-bottom.png)
+
+
+
 
 ---
 
@@ -376,6 +397,10 @@ All the screenshots to my manual tests on various major devices are below:
 - The live project has been tested by family and friends, acting as anonymous and registered users, on their own devices of different makes and sizes to make sure everything was working as designed. They checked all features mentioned above. They adviced on the need of an edit button inside the modal to have easy access to this feature. This tests can be seen as inputs from my family are on a different language.
 
 ## Bugs
+
+- Favicon did not show after loading and hard loading :
+	- This happened because i forgot to use url_for when using internal links with jinja templates
+	- used [flask documentation:](https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/) to solve the issue
 
 - When testing on smallest sizes (galaxy fold on Chrome Dev Tools) I noticed that the message box was too short for the message, and it showed in multiple lines, showing only one word per line. To fix this, I changed the column size on the base.html from s6 to s10. This fixed the issue.
 
