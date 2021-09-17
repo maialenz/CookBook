@@ -26,22 +26,6 @@ h4 {
     text-transform: uppercase;
 }
 
-
-/* code taken from: https://coder-coder.com/background-image-opacity/ */
-body::before {
-    background: url('/static/images/wood-background.jpg') no-repeat center center;
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .row {
     margin: 1.8rem 0;
 }
