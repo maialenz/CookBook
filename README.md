@@ -407,7 +407,34 @@ This courses are available to the user as a selection dropdown when they add a n
 
 - Admin user has access to all pages
 - Admin has the option to remove or edit any users recipes.
+- Admin has a specific tab where they have the possibility to create edit or delete courses. This option is also shown on the Admin's profile 
 
+---
+
+#### **Specific Edit Recipe Features:**
+
+- The form opens prefilled, so the user can see the information previously entered so they can see what information they want updated. 
+- A submit button to update the information on the db.
+- A cancel button to cancel the operation and get back to the main page.
+
+---
+
+#### **Specific Delete Recipe Feature:**
+
+- A modal that opens a confirmation box where the user has to accept their decision.
+- The modal give the user a cancel choice or an edit choice in case the user has changed their mind.
+
+---
+
+#### **Specific Security Features:**
+
+- If a user gets hold of a link that does not exist anymore, the user will be redirected to a 404 page
+- If a user tries to edit a recipe that does not exist, they'll be redirected to ad 404 page.
+- If there is a server error, the user will be redirected to a 500 page.
+- If the user and the recipe_by don't match, the user will be redirected to a 404 page
+- If the user is not logged in, the user cannot add any recipes
+- If the user is not admin, the user cannot add any courses
+- If admin is not logged in, admin cannot create, edit or delete courses
 ---
 
 ### Features left to implement
@@ -598,7 +625,7 @@ In order to successfully deploy the application that uses Python and MongoDB, th
   ![Screenshot of automatic deploys on Heroku](docs/deployment/deploys.png)
 
   13. Heroku will start building the app. When finished and if successful a message and a `view` button will appear. 
-  
+
   ![screenshot of successful deployment](docs/deployment/success.png)
 
   14. Now all the commits pushed to GitHub will automatically be deployed to Heroku!
