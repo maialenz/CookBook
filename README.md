@@ -269,7 +269,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 
 ---
 
-### **Database Model**
+## **Database Model**
 
 - This project have been made using MongoDB for since MongoDB allows a cross platform document-orientated database program. Classified as a NoSQL database program it uses JSON-like (BSON) documents with optional schemas.
 
@@ -418,6 +418,7 @@ The fonts used for the site were taken from [Google Fonts](https://fonts.google.
 - A contact form option users to request course types or modifications...
 - The option to allow admin users to block or remove users
 - In concern to the database, a future release would have a list of ingredients stored on it, so even if the UI changes the backend wouldn't change. This will be inplemented on a feature release as I ran out of time to implement this fix to the backend of the project.
+- A feature where users can update and recover their password if they have forgotten it.
 
 ---
 
@@ -664,6 +665,14 @@ $ python3 app.py
 
 ## CREDITS
 
+As this has been the first Backend project, I found this project to be quite very challenging. To refresh the lessons learnt during this module, I used a great variaty of documentation and tutorials to help build the basics and work from that point onward. Following the Ethos learned in Code Institute (Don't repeat yourself), I reused some of the code I previously wrote for the previous milestones. The reused code had been previously written by myself.
+Furthermore, I revisited the Authentication videos used for the miniproject to create the base on which I later built my own application, so some of the code is very similar to Tim's.
+
+- Credits to [Hero Patterns](https://www.heropatterns.com/) for the customized background pattern I used on the whole html element.
+
+- To my mentor for helping me write a condition to block unauthorized users from gaining access to blocked content.
+
+
 ## REFERENCES
 
 - Referenced the [Werkzeug Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha256.create?view=net-5.0) to read and learn more about sha256 and hashing passwords.
@@ -686,6 +695,8 @@ $ python3 app.py
 
 ## ACKNOWLEDGEMENTS
 
+To my family for helping me testing this application on their own devices and spending time giving me their opinions and thought so I could improve the User Experience and the User interface.
+
 ---
 
-Project created by **Maialen Zumeta** | Ireland, September 2021
+ <center> Project created by <strong>Maialen</strong> | Ireland, September 2021
