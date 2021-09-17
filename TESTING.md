@@ -136,7 +136,7 @@ As a css validator, I also used w3 Validator to make sure it checked my style.cs
 ---
 
 ### Pylint Validator
-- After running pylint app.py on the terminal, I got a few warnings:
+- After running pylint on the terminal, I got a few warnings:
     - e argument does not user snake_case. I changed this for app_error. This still gives a warning sayin Unused argument. But if this argument is removed from hadle_404(app_error) and server_error(500), the 404.html and 500.html do not render. So it was decided to leave the arguments on plave.
 - Unnecessary 'else' after 'return' and unnecessary 'elif' after'return': although I changed the elif statements at (/register) for if statements, I decided to leave the else statement in place on line 124 as changing this for another if statement makes the code a little confusing to understand. 
 
@@ -150,7 +150,7 @@ Using DevTool's Lighthouse tool, I checked all pages on mobile and desktop to ma
 
 (All tests were carried out the same way: I cleared cache data, opened new incognito page (Chrome and Edge), and reloaded and tested each page twice. Same procedure was used for mobile and web assessment)
 
-Due to the simplicity of the website, the results of the lighthouse testing have come back very strong. Since there is very few heavy files, the site loads very fast and with no major issues, both on mobile and desktop, increasing like this the UX.
+Due to the simplicity of the website, the results of the lighthouse testing have come back mostly strong. Since there is very few heavy files, the site loads very fast and with no major issues, both on mobile and desktop, increasing like this the UX.
 
 The only major thing to be fixed to improve accessibility was the missing attributes aria-label and alt for images. This was fixed immediately, improving considerably the accessibility scores.
 
@@ -398,6 +398,8 @@ All the screenshots to my manual tests on various major devices are below:
 
 ## Bugs
 
+Listed below are the biggest bugs that I encountered whilst building this project and what I did to fix them. Ass I used Dev Tool while developing this application, little errors like colors or font sizes where corrected immediately.
+
 - Favicon did not show after loading and hard loading :
 	- This happened because i forgot to use url_for when using internal links with jinja templates
 	- used [flask documentation:](https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/) to solve the issue
@@ -416,3 +418,17 @@ All the screenshots to my manual tests on various major devices are below:
 - When adding the background to the body, this would only show over the rest of the elements. 
     - To fix this i used  body::before. 
     - I did not use this at the end and instead I used a background and styling provided by [Hero Patterns](https://www.heropatterns.com/)
+
+
+## KNOWN BUGS
+
+- The footer moves up in very large viewports. Although I tried to fix this by setting a fixed footer, It keeps moving up if there is a gap between the content and the footer. This is not a big issue as the users of this website they will want to cook along their devices and most of them they'll be either small or medium screen sizes.
+
+- In the admin's profile, in the extra large screens, the admin only card (add courses) moves to the right side, making the card above change sizes. Although I tried to fix this by adding col l4 to all cards, this shows the rest of the users to see the cards offset. 
+    - As this site is intended to be seen in small and medium devices, this bug will be attented to be fixed in future releases.
+
+---
+
+## <center> Back to [README.md](README.md)
+
+---
